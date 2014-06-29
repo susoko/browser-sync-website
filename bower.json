@@ -1,0 +1,22 @@
+{
+  "name": "bs-jekyll",
+  "version": "0.0.0",
+  "authors": [
+    "Shane Osbourne <shane.osbourne8@gmail.com>"
+  ],
+  "description": "BrowserSync Website",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "http://browsersync.io",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "csswizardry-grids-with-floats": "~2.2.1",
+    "normalize-css": "~3.0.1"
+  }
+}

@@ -1,0 +1,11 @@
+code, samp {
+
+    @include font-size($mono-size);
+    font-family: $mono-font-family;
+    line-height: 1.25;
+}
+
+.lede {
+
+    @include font-size($lede-size);
+}

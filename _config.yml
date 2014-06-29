@@ -1,0 +1,16 @@
+# Site settings
+title: BrowserSync
+email: your-email@domain.com
+description: "BrowserSync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&rsquo;s wicked-fast and totally free."
+baseurl: ""
+cssFile: "core.min.css"
+url: "http://yourdomain.com"
+twitter_username: browsersync
+github_username:  shakshane
+
+# Files config
+exclude: ["node_modules", "gulpfile.js", "package.json", "bower.json", "bower_components"]
+
+# Build settings
+markdown: kramdown
+permalink: pretty
