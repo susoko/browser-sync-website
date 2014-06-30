@@ -1,7 +1,7 @@
 # Site settings
 title: BrowserSync
 description: "BrowserSync makes your browser testing workflow faster by synchronising URLs, interactions and code changes across multiple devices. It&rsquo;s wicked-fast and totally free."
-baseurl: "http://browsersync.io"
+baseurl: "http://browsersync.io/"
 highlighter: pygments
 url: "http://browsersync.io"
 twitter_username: browsersync
