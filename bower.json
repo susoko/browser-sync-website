@@ -5,7 +5,7 @@
     "Shane Osbourne <shane.osbourne8@gmail.com>"
   ],
   "description": "BrowserSync Website",
-  "main": "index.html",
+  "main": "docs.html",
   "license": "MIT",
   "homepage": "http://browsersync.io",
   "ignore": [

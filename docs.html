@@ -2,4 +2,59 @@
 layout: default
 page-label: "docs"
 ---
-Documentation is nice
+
+<section id="api-usage" class="wrapper code-example">
+
+    <div class="container">
+
+        <h2 class="text--center">API</h2>
+
+        <p class="lede"></p>
+            <h3>1. Static file server</h3>
+            <p>Let's say you have a website with the following files:</p>
+    </div>
+            <div class="code-sample">
+
+            <pre><code>- index.html
+-- css/style.css
+-- js/jquery.min.js</code></pre>
+            </div>
+    <div class="container">
+
+            <p>... and you want to test it on multiple devices. That's really easy! Just create a file
+            at the same level as your <code>index.html</code> called something like <strong><code>bs.js</code></strong>
+            and enter the following: </p>
+
+    </div>
+            <div class="code-sample">
+
+            {% highlight javascript %}
+                {% include scripts/eg1.js %}
+            {% endhighlight %}
+                </div>
+
+    <div class="container">
+            <p>Save that file (<strong>bs.js</strong>) and then in the same directory, just run the following command:</p>
+    </div>
+            <div class="code-sample">
+
+            {% highlight bash %}
+$ node bs.js
+            {% endhighlight %}
+
+                </div>
+                <div class="container">
+                    <p>That will start the BrowserSync server & open up a browser tab for you at something like <code>localhost:3000</code>. That
+                    address will work in all browsers on your current machine - but if you want to test on external devices, then you'll
+                    need the second address that was printed to the console when you ran the previous command.</p>
+
+                    <p>You should see something along these lines in your console/terminal:</p>
+                </div>
+    <div class="code-sample">
+    {% highlight bash %}
+$ [BS] Local: >>> http://localhost:3000
+$ [BS] External: >>> http://192.168.0.4:3000
+    {% endhighlight %}
+    </div>
+</section>
+

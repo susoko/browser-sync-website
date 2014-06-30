@@ -22,13 +22,27 @@ env: "production"
 navigation:
  - page-label: home
    label: "Get Started"
-   url: /index.html#install
+   url: /docs.html#install
  - page-label: docs
    label: "Documentation"
-   url: https://github.com/shakyShane/browser-sync/wiki
+   url: /docs
  - page-label: source
    label: "Source Code"
    url: https://github.com/shakyShane/browser-sync
+
+docs-navigation:
+  - page-label: gulp
+    label: "+ Gulp"
+    url: "/docs/gulp"
+  - page-label: grunt
+    label: "+ Grunt"
+    url: "/docs/grunt"
+  - page-label: api
+    label: "API"
+    url: "/docs/api"
+  - page-label: options
+    label: "Options"
+    url: "/docs/options"
 
 links:
   docs: "https://github.com/shakyShane/browser-sync/wiki"

@@ -9,3 +9,33 @@ code, samp {
 
     @include font-size($lede-size);
 }
+
+.code-example {
+    p, h2, h3 {
+        margin-bottom: $base-spacing*2;
+    }
+    .container {
+        background: white;
+        padding-top: $base-spacing*2;
+        padding-left: $base-spacing*2;
+        padding-right: $base-spacing*2;
+    }
+}
+
+.code-sample {
+
+    background: $navy;
+    padding: $base-spacing 0;
+    margin-bottom: 0;
+
+    pre {
+        width: auto;
+        max-width: $page-width;
+        list-style: none;
+        padding-left: $base-spacing*2;
+        padding-right: $base-spacing*2;
+        margin: 0 auto;
+        background: $navy!important;
+        border-radius: 0;
+    }
+}
