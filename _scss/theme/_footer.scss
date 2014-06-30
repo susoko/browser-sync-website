@@ -8,9 +8,20 @@
         color: $white;
         font-weight: bold;
 
+    }
+
+}
+
+.social-links {
+
+    @include font-size(30px);
+
+    a {
+        padding: 0 $half-spacing;
         &:hover,
         &:focus {
-            // color: $white;
+            text-decoration: none;
+            color: $red;
         }
     }
 }

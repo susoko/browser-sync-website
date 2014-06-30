@@ -3,10 +3,15 @@
 
         <h1 class="site-title">BrowserSync</h1>
         <p class="site-lede">Time-saving synchronised browser testing.</p>
+
         <ul class="nav--inline">
-            <li><a href="#install" class="button button--primary">Get Started</a></li>
-            <li><a href="https://github.com/shakyShane/browser-sync/wiki">Documentation</a></li>
-            <li><a href="https://github.com/shakyShane/browser-sync">Source Code</a></li>
+        {% for link in site.navigation %}
+            {% assign current = nil %}
+            {% if page.page-label == link.page-label %}
+                {% assign current = 'button button--primary' %}
+            {% endif %}
+            <li><a href="{{link.url}}" class="{{current}}">{{ link.label }}</a></li>
+        {% endfor %}
         </ul>
 
     </div>

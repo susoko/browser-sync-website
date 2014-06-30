@@ -1,1 +1,4 @@
-cssFile: "core.css"
+# Assets
+cssFile: "css/core.css"
+baseurl: "/"
+env: "dev"

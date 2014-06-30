@@ -121,20 +121,4 @@ $lap-start: 600px;
 $desk-start: 900px;
 $wide-start: 1200px;
 
-$palm-grids: (2, 4);
-$lap-grids: (4, 6);
-$desk-grids: (6, 8);
-
-//$blockgrids : (2, 3, 4);
-
-//$breakpoints : (
-//    'palm' 0 $lap-start 4% $palm-grids,
-//    'lap' $lap-start $desk-start 4% $lap-grids,
-//    'desk' $desk-start 0 4% $desk-grids
-//);
-
-/*================================================================================
-VENDOR
-================================================================================*/
-
 $fa-css-prefix: icon;
