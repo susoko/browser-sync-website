@@ -4,7 +4,72 @@ title: "BrowserSync API"
 page-label: "api"
 ---
 
-<section id="api-usage" class="wrapper code-example">
+<section id="page-top" class="wrapper code-example">
 
+    <div class="container">
+
+        <h2 class="text--center">{{page.title}}</h2>
+
+        <p>Our API is incredibly simple & powerful. You can use it to create your own
+            tiny node program for local development or integrate with other tools.</p>
+
+        <h3>1. Initialize</h3>
+        <p>To use our API in any NodeJS program, simply <code>require</code> the BrowserSync module like you would any other. 
+            This will give you access to the public methods detailed below.</p>
+    </div>
+    <div class="code-sample">
+
+        {% highlight javascript %}
+        var browserSync = require("browser-sync");
+        {% endhighlight %}
+
+    </div>
+    <div class="container">
+       
+        <h3 class="flush">.init([options, callback])</h3>
+        <p>Calling this method will always start a BrowserSync server and if you provide no options, BrowserSync will start in <code>snippet</code> mode
+        and will require you to copy/paste the provided code into your website. Don't forget you can <a href="/docs/options">review all available options here.</a></p>
+
+    </div>
+
+    <div class="code-sample">
+
+        {% highlight javascript %}
+        {% include scripts/api/init.js %}
+        {% endhighlight %}
+
+    </div>
+    
+    <div class="container">
+        <p>The main exported function is also an alias to <code>.init()</code> - so if you prefer, you can also do this: </p>
+    </div>
+    
+    <div class="code-sample">
+        {% highlight javascript %}
+var browserSync = require("browser-sync");
+
+browserSync();
+        {% endhighlight %}
+    </div>
+    
+    <div class="container">
+        <p>You'll more than likely want to run a server or proxy when using BrowserSync - you specify which by passing an options object as the first parameter:</p>
+
+        <p><strong>Server example:</strong></p>
+    </div>
+    <div class="code-sample">
+        {% highlight javascript %}
+        {% include scripts/api/init.options.server.js %}
+        {% endhighlight %}
+    </div>
+
+    <div class="container">
+    <p><strong>Proxy example:</strong></p>
+    </div>
+    <div class="code-sample">
+        {% highlight javascript %}
+        {% include scripts/api/init.options.proxy.js %}
+        {% endhighlight %}
+    </div>
 </section>
 
