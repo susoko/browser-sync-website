@@ -41,7 +41,13 @@
         }
 
         span {
-            color: $lime;
+            a {
+                color: $lime;
+                &:hover {
+                    text-decoration: none;
+                    color: white;
+                }
+            }
         }
     }
 }

@@ -40,6 +40,9 @@ docs-navigation:
   - page-label: api
     label: "API"
     url: "/docs/api"
+  - page-label: command-line
+    label: "Command line"
+    url: "/docs/command-line"
   - page-label: options
     label: "Options"
     url: "/docs/options"
@@ -50,3 +53,5 @@ links:
   twitter: "https://twitter.com/browsersync"
   npm: "https://npmjs.org/shakyshane/browser-sync"
   gulp: "/docs/gulp"
+  site-github: "https://github.com/shakyShane/browser-sync-website"
+  grunt-github: "https://github.com/shakyShane/grunt-browser-sync"

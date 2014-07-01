@@ -97,6 +97,7 @@ gulp.task("watch", function () {
         "_layouts/*.html",
         "_posts/*",
         "docs/*",
+        "*.md",
         "_includes/*",
         "_includes/**/*",
         "_config.yml"

@@ -5,20 +5,39 @@ date:   2014-06-29 19:19:35
 categories: jekyll update
 ---
 
-You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
-To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext.
 
-Jekyll also offers powerful support for code snippets:
+###1. Static file server
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
+Let's say you have a website with the following files:
+
+
+    - index.html
+    -- css/style.css
+    -- js/jquery.min.js
+
+
+... and you want to test it on multiple devices. That's really easy! Just create a file
+at the same level as your <code>index.html</code> called something like <strong><code>bs.js</code></strong>
+and enter the following:
+
+{% highlight javascript %}
+    {% include scripts/api/init.js %}
 {% endhighlight %}
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh].
+<p>Save that file (<strong>bs.js</strong>) and then in the same directory, just run the following command:</p>
 
-[jekyll-gh]: https://github.com/jekyll/jekyll
-[jekyll]:    http://jekyllrb.com
+{% highlight bash %}
+$ node bs.js
+{% endhighlight %}
+
+That will start the BrowserSync server & open up a browser tab for you at something like <code>localhost:3000</code>. That
+address will work in all browsers on your current machine - but if you want to test on external devices, then you'll
+need the second address that was printed to the console when you ran the previous command.
+
+You should see something along these lines in your console/terminal:
+                    
+{% highlight bash %}
+$ [BS] Local: >>> http://localhost:3000
+$ [BS] External: >>> http://192.168.0.4:3000
+{% endhighlight %}
+

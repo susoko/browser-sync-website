@@ -1661,8 +1661,11 @@ a {
         font-size: 1.5rem; } }
     .site-title.alt a {
       font-weight: normal; }
-    .site-title.alt span {
+    .site-title.alt span a {
       color: #d3ed13; }
+      .site-title.alt span a:hover {
+        text-decoration: none;
+        color: white; }
 
 .site-lede {
   margin-bottom: 24px;
@@ -1792,6 +1795,18 @@ code, samp {
         font-size: 2.125rem;
         margin-bottom: 48px;
         text-align: center; } }
+  .doc-wrapper > pre {
+    margin-left: -12px;
+    margin-right: -12px;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    padding: 12px; }
+    @media (min-width: 600px) {
+      .doc-wrapper > pre {
+        padding: 36px;
+        margin-bottom: 48px;
+        margin-left: -36px;
+        margin-right: -36px; } }
 
 /**
  * The wrapper that is provided by the syntax highlighter
@@ -1852,6 +1867,19 @@ code, samp {
         padding-top: 36px;
         margin-bottom: 12px;
         border-top: 0; } }
+  .code-example.docs ul {
+    margin-left: 24px;
+    margin-bottom: 48px; }
+    .code-example.docs ul li {
+      display: block; }
+      .code-example.docs ul li p {
+        margin-bottom: 0; }
+      .code-example.docs ul li a {
+        display: block;
+        padding: 12px; }
+    .code-example.docs ul:before {
+      content: "";
+      display: none; }
   .code-example ul {
     list-style: none; }
     .code-example ul li {

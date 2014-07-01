@@ -265,7 +265,8 @@ a [class*=" icon-"],a [class^=icon-]{text-decoration:none}
 .site-title.alt{padding-top:12px;font-size:20px;font-size:1.25rem}
 @media (min-width:600px){.site-title.alt{font-size:24px;font-size:1.5rem}}
 .site-title.alt a{font-weight:400}
-.site-title.alt span{color:#d3ed13}
+.site-title.alt span a{color:#d3ed13}
+.site-title.alt span a:hover{text-decoration:none;color:#fff}
 .site-lede{margin-bottom:24px;font-size:32px;font-size:2rem}
 @media only screen and (max-width:599px){.site-title{padding-top:12px;font-size:32px;font-size:2rem}
 .site-lede{margin-bottom:12px;font-size:20px;font-size:1.25rem}
@@ -296,6 +297,8 @@ code,samp{font-size:14px;font-size:.875rem;font-family:Consolas,Monaco,monospace
 @media (min-width:600px){.doc-wrapper{-webkit-border-radius:5px;border-radius:5px;border:1px solid #CCC;padding:36px 36px 0}}
 .doc-wrapper h1{font-size:20px;font-size:1.25rem;text-align:left}
 @media (min-width:600px){.doc-wrapper h1{font-size:34px;font-size:2.125rem;margin-bottom:48px;text-align:center}}
+.doc-wrapper>pre{margin-left:-12px;margin-right:-12px;-webkit-border-radius:0;border-radius:0;padding:12px}
+@media (min-width:600px){.doc-wrapper>pre{padding:36px;margin-bottom:48px;margin-left:-36px;margin-right:-36px}}
 .highlight{background:#1b2032;padding:12px;margin-left:-12px;margin-right:-12px;margin-bottom:24px;border:1px solid #2d3553;-webkit-border-radius:0;border-radius:0}
 .highlight:last-child{margin-bottom:0}
 @media (min-width:600px){.highlight:last-child{-webkit-border-bottom-left-radius:5px;border-bottom-left-radius:5px;-webkit-border-bottom-right-radius:5px;border-bottom-right-radius:5px}}
@@ -306,6 +309,11 @@ code,samp{font-size:14px;font-size:.875rem;font-family:Consolas,Monaco,monospace
 .code-example .container{padding-top:0;padding-left:0;padding-right:0}
 .code-example h3{font-size:18px;font-size:1.125rem;padding-top:12px}
 @media (min-width:600px){.code-example h3{font-size:30px;font-size:1.875rem;padding-top:36px;margin-bottom:12px;border-top:0}}
+.code-example.docs ul{margin-left:24px;margin-bottom:48px}
+.code-example.docs ul li{display:block}
+.code-example.docs ul li p{margin-bottom:0}
+.code-example.docs ul li a{display:block;padding:12px}
+.code-example.docs ul:before{content:"";display:none}
 .code-example ul{list-style:none}
 .code-example ul li{display:inline-block;color:#256b8d}
 .code-example ul li:first-child{color:#000;font-weight:700}
