@@ -11,10 +11,7 @@ page-label: "api"
         <h2 class="text--center">{{page.title}}</h2>
 
         <p>Our API is incredibly simple & powerful. You can use it to create your own
-            tiny node program for local development or integrate with other tools.</p>
-
-        <h3>1. Initialize</h3>
-        <p>To use our API in any NodeJS program, simply <code>require</code> the BrowserSync module like you would any other. 
+            tiny node program for local development or integrate with other tools. To use it, simply <code>require</code> the BrowserSync module like you would any other. 
             This will give you access to the public methods detailed below.</p>
     </div>
     <div class="code-sample">
@@ -26,10 +23,22 @@ page-label: "api"
     </div>
     <div class="container">
        
-        <h3 class="flush">.init([options, callback])</h3>
-        <p>Calling this method will always start a BrowserSync server and if you provide no options, BrowserSync will start in <code>snippet</code> mode
-        and will require you to copy/paste the provided code into your website. Don't forget you can <a href="/docs/options">review all available options here.</a></p>
+        <h3>browserSync( config, callback )</h3>
+        <ul class="nav">
+            <li class="name"><strong>config</strong> - <span class="color-teal">Object</span> - <span class="color-grey">[optional]</span></li>
+        </ul>
+        <p>This is the main configuration for your BrowserSync instance and can contain any of the <a href="/docs/options">available options.</a>
+        If you do not pass a config an argument for configuration, BrowserSync will still run; but it will be in the simple <code>snippet</code>
+        mode</p>
 
+        <ul class="nav">
+            <li><strong>callback</strong> - <span class="color-teal">Function</span> - <span class="color-grey">[optional]</span></li>
+        </ul>
+        <p>If you pass a callback function, it will be called when BrowserSync has completed all setup tasks and is ready to use. This
+        is useful when you need to wait for information (for example: urls, port etc). The first argument will be an error, if any occurred 
+        during startup and the second will be the running BrowserSync instance.</p>
+
+        <p><strong>Examples:</strong></p>
     </div>
 
     <div class="code-sample">
@@ -41,35 +50,68 @@ page-label: "api"
     </div>
     
     <div class="container">
-        <p>The main exported function is also an alias to <code>.init()</code> - so if you prefer, you can also do this: </p>
+        <h3>.reload( arg )</h3>
+        <ul class="nav">
+            <li class="name"><strong>arg</strong> - <span class="color-teal">String | Array | Object</span> - <span class="color-grey">[optional]</span></li>
+        </ul>
+        <p>Can be a single filepath, an array of file paths, or a config object for streams support.
+            No arguments will cause all browsers to refresh. Streams are also supported, so if you are processing files you can <code>.pipe()</code> them to the reload method at the exact point that you want to browsers to be informed. Please checkout the
+            <a href="{{site.links.gulp}}">GulpJS section</a> for more examples of using the streams support.</p>
+        
+        <p>The <code>reload</code> method will inform all browsers about changed files & will either cause the browser to refresh, or inject the files where possible.</p>
     </div>
-    
+    <div class="code-sample">
+
+        {% highlight javascript %}
+        {% include scripts/api/reload.string.js %}
+        {% endhighlight %}
+
+    </div>
+    <div class="container">
+        <h3>.notify( content )</h3>
+        <ul class="nav">
+            <li class="name"><strong>content</strong> - <span class="color-teal">String</span></li>
+        </ul>
+        <p>HTML also supported.</p>
+        <p>You can flash a message to all browsers by calling this method. You could use this for displaying console errors,
+            waiting messages, or anything else! A common use-case would be to notify a user that an async task has started/finished - compiling SASS/LESS for example. That's exactly how
+        we use it to build <em>this</em> website, along with a little notification when Jekyll is re-building.</p>
+        
+    </div>
     <div class="code-sample">
         {% highlight javascript %}
-var browserSync = require("browser-sync");
-
-browserSync();
+        {% include scripts/api/notify.js %}
         {% endhighlight %}
     </div>
     
     <div class="container">
-        <p>You'll more than likely want to run a server or proxy when using BrowserSync - you specify which by passing an options object as the first parameter:</p>
+        <h3>.active</h3>
 
-        <p><strong>Server example:</strong></p>
+        <ul class="nav">
+            <li class="name"><span class="color-teal">Boolean</span></li>
+        </ul>
+        
+        <p>A simple true/false flag that you can use to determine if there's a currently-running BrowserSync instance</p>
+
     </div>
+    
     <div class="code-sample">
         {% highlight javascript %}
-        {% include scripts/api/init.options.server.js %}
+        {% include scripts/api/active.js %}
         {% endhighlight %}
     </div>
-
+    
     <div class="container">
-    <p><strong>Proxy example:</strong></p>
+        <h3>.exit()</h3>
+
+        <p>This method will close any running server, stop file watching & exit the current process.</p>
+
     </div>
     <div class="code-sample">
         {% highlight javascript %}
-        {% include scripts/api/init.options.proxy.js %}
+        {% include scripts/api/exit.js %}
         {% endhighlight %}
     </div>
+    
 </section>
 

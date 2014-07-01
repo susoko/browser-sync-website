@@ -1818,6 +1818,12 @@ code, samp {
     padding: 0;
     padding-top: 12px; }
 
+.color-teal {
+  color: #256b8d; }
+
+.color-grey {
+  color: #9e9e9e; }
+
 .steps {
   margin-left: 0;
   list-style: none; }

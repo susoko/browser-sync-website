@@ -1,3 +1,15 @@
-var browserSync = require("browser-sync");
+var config = {
+    server: {
+        baseDir: "./"
+    }
+};
 
-browserSync.init();
+// config only
+browserSync(config);
+
+// config + callback
+browserSync(config, function (err, bs) {
+    if (!err) {
+        console.log("BrowserSync is ready!");
+    }
+});
