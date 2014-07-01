@@ -1490,6 +1490,10 @@ body {
   color: #333333;
   text-rendering: optimizeLegibility; }
 
+.lede {
+  font-size: 20px;
+  font-size: 1.25rem; }
+
 /**
  * Inline using floats
  */
@@ -1758,18 +1762,111 @@ a {
 .text--center {
   text-align: center; }
 
+/**
+ * Base typography styles
+ */
 code, samp {
   font-size: 14px;
   font-size: 0.875rem;
   font-family: Consolas, Monaco, monospace;
   line-height: 1.25; }
 
-.lede {
-  font-size: 20px;
-  font-size: 1.25rem; }
+.doc-wrapper {
+  background: white;
+  padding: 12px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px; }
+  @media (min-width: 600px) {
+    .doc-wrapper {
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+      border: 1px solid #CCC;
+      padding: 36px 36px 0; } }
+  .doc-wrapper h1 {
+    font-size: 20px;
+    font-size: 1.25rem;
+    text-align: left; }
+    @media (min-width: 600px) {
+      .doc-wrapper h1 {
+        font-size: 34px;
+        font-size: 2.125rem;
+        margin-bottom: 48px;
+        text-align: center; } }
 
+/**
+ * The wrapper that is provided by the syntax highlighter
+ */
+.highlight {
+  background: #1b2032;
+  padding: 12px;
+  margin-left: -12px;
+  margin-right: -12px;
+  margin-bottom: 24px;
+  border: 1px solid #2d3553;
+  -webkit-border-radius: 0;
+  border-radius: 0; }
+  .highlight:last-child {
+    margin-bottom: 0; }
+    @media (min-width: 600px) {
+      .highlight:last-child {
+        -webkit-border-bottom-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        -webkit-border-bottom-right-radius: 5px;
+        border-bottom-right-radius: 5px; } }
+  @media (min-width: 600px) {
+    .highlight {
+      padding: 36px;
+      margin-left: -36px;
+      margin-right: -36px;
+      margin-bottom: 48px; } }
+  .highlight pre {
+    padding: 0;
+    max-width: 740px;
+    display: block;
+    white-space: pre;
+    word-wrap: normal;
+    margin: 0 auto; }
+
+/**
+ * Styles specific to pages that contain docs
+ */
 .code-example {
+  background: #F2F2F2;
   padding-top: 0; }
+  @media (min-width: 600px) {
+    .code-example {
+      padding-top: 24px; } }
+  .code-example .container {
+    padding-top: 0;
+    padding-left: 0;
+    padding-right: 0; }
+  .code-example h3 {
+    font-size: 18px;
+    font-size: 1.125rem;
+    padding-top: 12px;
+    margin-bottom: 12px; }
+    @media (min-width: 600px) {
+      .code-example h3 {
+        font-size: 30px;
+        font-size: 1.875rem;
+        padding-top: 36px;
+        margin-bottom: 12px;
+        border-top: 0; } }
+  .code-example ul {
+    list-style: none; }
+    .code-example ul li {
+      display: inline-block;
+      color: #256b8d; }
+      .code-example ul li:first-child {
+        color: black;
+        font-weight: 700; }
+      .code-example ul li.recede {
+        color: #9e9e9e; }
+    .code-example ul:before {
+      font-family: FontAwesome;
+      content: "\f121";
+      color: #e1e1e1;
+      margin-right: 5px; }
   .code-example p, .code-example h2, .code-example h3 {
     margin-bottom: 24px; }
     @media (min-width: 600px) {
@@ -1779,50 +1876,6 @@ code, samp {
           margin-bottom: 24px; } }
     .code-example p.flush, .code-example h2.flush, .code-example h3.flush {
       margin-bottom: 12px; }
-  .code-example .container {
-    background: white;
-    padding-top: 24px;
-    padding-left: 24px;
-    padding-right: 24px; }
-    @media (min-width: 600px) {
-      .code-example .container {
-        padding-top: 48px;
-        padding-left: 48px;
-        padding-right: 48px; } }
-    .code-example .container:first-child {
-      padding-top: 24px; }
-
-.code-sample {
-  background: #1b2032;
-  padding: 24px 0;
-  margin-bottom: 0; }
-  .code-sample .highlight {
-    overflow-x: auto;
-    width: auto;
-    max-width: 740px;
-    list-style: none;
-    padding-left: 24px;
-    padding-right: 24px;
-    margin: 0 auto;
-    background: #1b2032 !important;
-    -webkit-border-radius: 0;
-    border-radius: 0; }
-    @media (min-width: 600px) {
-      .code-sample .highlight {
-        padding-left: 48px;
-        padding-right: 48px; } }
-  .code-sample pre {
-    display: block;
-    white-space: pre;
-    word-wrap: normal;
-    padding: 0;
-    padding-top: 12px; }
-
-.color-teal {
-  color: #256b8d; }
-
-.color-grey {
-  color: #9e9e9e; }
 
 .steps {
   margin-left: 0;

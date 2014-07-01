@@ -29,3 +29,7 @@ body {
     color: $base-color;
     text-rendering: optimizeLegibility;
 }
+
+.lede {
+    @include font-size($lede-size);
+}
