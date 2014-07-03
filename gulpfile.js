@@ -99,6 +99,7 @@ gulp.task("watch", function () {
         "docs/*",
         "*.md",
         "_includes/*",
+        "_plugins/*",
         "_includes/**/*",
         "_config.yml"
     ], ["jekyll-rebuild"]);

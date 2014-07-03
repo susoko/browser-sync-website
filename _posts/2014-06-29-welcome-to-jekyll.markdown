@@ -21,7 +21,7 @@ at the same level as your <code>index.html</code> called something like <strong>
 and enter the following:
 
 {% highlight javascript %}
-    {% include scripts/api/init.js %}
+    {% include scripts/api/browserSync.js %}
 {% endhighlight %}
 
 <p>Save that file (<strong>bs.js</strong>) and then in the same directory, just run the following command:</p>
