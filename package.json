@@ -4,7 +4,7 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "gulp lint"
+    "test": "gulp build"
   },
   "homepage": "https://github.com/shakyshane/browser-sync-site",
   "author": {
@@ -32,6 +32,7 @@
     "gulp-ruby-sass": "^0.5.0",
     "gulp-minify-css": "^0.3.6",
     "gulp-rename": "^1.2.0",
-    "gulp-jshint": "^1.6.4"
+    "gulp-jshint": "^1.6.4",
+    "pre-commit": "0.0.9"
   }
 }

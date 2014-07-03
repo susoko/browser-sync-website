@@ -27,9 +27,16 @@ function getjekyllArgs(cb, env) {
 }
 
 /**
+ * Build documentation
+ */
+gulp.task("docs-build", function (cb) {
+    return cp.spawn("node", ["makeDocs"], {stdio: "inherit"}).on("close", cb);
+});
+
+/**
  * Build the Jekyll Site
  */
-gulp.task("jekyll-build", function (done) {
+gulp.task("jekyll-build", ["docs-build"],  function (done) {
     browserSync.notify(messages.jekyllBuild);
     return getjekyllArgs(done);
 });
@@ -37,7 +44,7 @@ gulp.task("jekyll-build", function (done) {
 /**
  * Build the Jekyll Site
  */
-gulp.task("jekyll-build-dev", function (done) {
+gulp.task("jekyll-build-dev", ["docs-build"], function (done) {
     browserSync.notify(messages.jekyllBuild);
     return getjekyllArgs(done, "prod");
 });
@@ -82,8 +89,8 @@ gulp.task("sass", function () {
 gulp.task("lint", function () {
     gulp.src(["_includes/scripts/**/*.js", "gulpfile.js"])
         .pipe(jshint(".jshintrc"))
-        .pipe(jshint.reporter("default"));
-//        .pipe(jshint.reporter("fail"));
+        .pipe(jshint.reporter("default"))
+        .pipe(jshint.reporter("fail"));
 });
 
 /**
@@ -111,4 +118,4 @@ gulp.task("watch", function () {
  */
 gulp.task("default", ["browser-sync", "watch"]);
 
-gulp.task("build", ["sass", "jekyll-build"]);
+gulp.task("build", ["lint", "sass", "jekyll-build"]);
