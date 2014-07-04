@@ -3,18 +3,50 @@
     "files": {
         "/Users/shakyshane/Sites/os-browser-sync/lib/index.js": {
             "name": "/Users/shakyshane/Sites/os-browser-sync/lib/index.js",
-            "modules": {},
+            "modules": {
+                "BrowserSync": 1
+            },
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js": {
+            "name": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "modules": {
+                "BrowserSync.options": 1
+            },
             "classes": {},
             "fors": {},
             "namespaces": {}
         }
     },
-    "modules": {},
+    "modules": {
+        "BrowserSync": {
+            "name": "BrowserSync",
+            "submodules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/index.js",
+            "line": 4
+        },
+        "BrowserSync.options": {
+            "name": "BrowserSync.options",
+            "submodules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {},
+            "tag": "module",
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 1
+        }
+    },
     "classes": {},
     "classitems": [
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/index.js",
-            "line": 17,
+            "line": 21,
             "params": [
                 {
                     "name": "files",
@@ -37,17 +69,19 @@
                 "description": "",
                 "type": "BrowserSync"
             },
-            "class": ""
+            "class": "",
+            "module": "BrowserSync"
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/index.js",
-            "line": 27,
+            "line": 31,
             "description": "Handle Command-line usage",
-            "class": ""
+            "class": "",
+            "module": "BrowserSync"
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/index.js",
-            "line": 47,
+            "line": 51,
             "description": "Handle External API usage.",
             "itemtype": "method",
             "name": "browserSync",
@@ -69,11 +103,12 @@
                 "description": "",
                 "type": "BrowserSync"
             },
-            "class": ""
+            "class": "",
+            "module": "BrowserSync"
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/index.js",
-            "line": 61,
+            "line": 65,
             "description": "The `reload` method will inform all browsers about changed files and will either cause the browser to refresh, or inject the files where possible.",
             "itemtype": "method",
             "name": "reload",
@@ -89,19 +124,21 @@
                 "description": "",
                 "type": "*"
             },
-            "class": ""
+            "class": "",
+            "module": "BrowserSync"
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/index.js",
-            "line": 70,
+            "line": 74,
             "description": "A simple true/false flag that you can use to determine if there's a currently-running BrowserSync instance.",
             "itemtype": "property",
             "name": "active",
-            "class": ""
+            "class": "",
+            "module": "BrowserSync"
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/index.js",
-            "line": 81,
+            "line": 85,
             "description": "Helper method for browser notifications",
             "itemtype": "method",
             "name": "notify",
@@ -112,11 +149,12 @@
                     "type": "String|HTML"
                 }
             ],
-            "class": ""
+            "class": "",
+            "module": "BrowserSync"
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/index.js",
-            "line": 89,
+            "line": 93,
             "description": "Register a plugin. Must implement at least a 'plugin' method that returns a\ncallable function.",
             "itemtype": "method",
             "name": "use",
@@ -138,46 +176,290 @@
                     "optional": true
                 }
             ],
-            "class": ""
+            "class": "",
+            "module": "BrowserSync"
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/index.js",
-            "line": 100,
+            "line": 104,
             "description": "The internal Event Emitter used by the running BrowserSync instance (if there is one).\nYou can use this to emit your own events, such as changed files, logging etc.",
             "itemtype": "property",
             "name": "emitter",
             "type": "Events.EventEmitter",
-            "class": ""
+            "class": "",
+            "module": "BrowserSync"
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/index.js",
-            "line": 109,
+            "line": 113,
             "description": "This method will close any running server, stop file watching & exit the current process.",
             "itemtype": "method",
             "name": "exit",
-            "class": ""
+            "class": "",
+            "module": "BrowserSync"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 5,
+            "itemtype": "property",
+            "name": "files",
+            "type": "Array|String",
+            "default": "false",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 11,
+            "itemtype": "property",
+            "name": "ghostMode",
+            "type": "Object",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 25,
+            "itemtype": "property",
+            "name": "logLevel",
+            "type": "String can be one of \"info\", \"debug\" or \"silent\"",
+            "default": "info",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 31,
+            "itemtype": "property",
+            "name": "server",
+            "type": "Object|Boolean",
+            "default": "false",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 37,
+            "itemtype": "property",
+            "name": "proxy",
+            "type": "String|Boolean",
+            "default": "false",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 43,
+            "itemtype": "property",
+            "name": "port",
+            "type": "Number",
+            "default": "3000",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 49,
+            "itemtype": "property",
+            "name": "open",
+            "type": "Boolean",
+            "default": "true",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 55,
+            "itemtype": "property",
+            "name": "browser",
+            "type": "String|Array",
+            "default": "default",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 61,
+            "itemtype": "property",
+            "name": "xip",
+            "type": "Boolean",
+            "default": "false",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 67,
+            "itemtype": "property",
+            "name": "hostnameSuffix",
+            "type": "Boolean|String",
+            "default": "false",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 73,
+            "itemtype": "property",
+            "name": "notify",
+            "type": "Boolean",
+            "default": "true",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 79,
+            "description": "Number in milliseconds to wait before emitting file changed event",
+            "itemtype": "property",
+            "name": "debounce",
+            "type": "Number",
+            "default": "0",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 86,
+            "itemtype": "property",
+            "name": "scrollProportionally",
+            "type": "Boolean",
+            "default": "true",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 92,
+            "itemtype": "property",
+            "name": "scrollThrottle",
+            "type": "Number",
+            "default": "0",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 98,
+            "itemtype": "property",
+            "name": "reloadDelay",
+            "type": "Number",
+            "default": "0",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 104,
+            "itemtype": "property",
+            "name": "injectChanges",
+            "type": "Boolean",
+            "default": "true",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 110,
+            "itemtype": "property",
+            "name": "startPath",
+            "type": "String|Null",
+            "default": "null",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 145,
+            "itemtype": "property",
+            "name": "debugInfo",
+            "type": "Boolean",
+            "default": "true",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 151,
+            "itemtype": "property",
+            "name": "injectFileTypes",
+            "type": "Array",
+            "default": "[\"css\", \"png\", \"jpg\", \"jpeg\", \"svg\", \"gif\", \"webp\"]",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 157,
+            "description": "Whether to minify client script, or not.",
+            "itemtype": "property",
+            "name": "minify",
+            "type": "Boolean",
+            "default": "true",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 164,
+            "itemtype": "property",
+            "name": "logConnections",
+            "type": "Boolean",
+            "default": "false",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 170,
+            "itemtype": "property",
+            "name": "host",
+            "type": "String",
+            "default": "null",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 176,
+            "itemtype": "property",
+            "name": "codeSync",
+            "type": "Boolean",
+            "default": "true",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 182,
+            "itemtype": "property",
+            "name": "timestamps",
+            "type": "Boolean",
+            "default": "true",
+            "class": "",
+            "module": "BrowserSync.options"
         }
     ],
     "warnings": [
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " /Users/shakyshane/Sites/os-browser-sync/lib/index.js:17"
+            "line": " /Users/shakyshane/Sites/os-browser-sync/lib/index.js:21"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " /Users/shakyshane/Sites/os-browser-sync/lib/index.js:47"
+            "line": " /Users/shakyshane/Sites/os-browser-sync/lib/index.js:51"
         },
         {
             "message": "replacing incorrect tag: returns with return",
-            "line": " /Users/shakyshane/Sites/os-browser-sync/lib/index.js:61"
+            "line": " /Users/shakyshane/Sites/os-browser-sync/lib/index.js:65"
         },
         {
             "message": "Missing item type",
-            "line": " /Users/shakyshane/Sites/os-browser-sync/lib/index.js:17"
+            "line": " /Users/shakyshane/Sites/os-browser-sync/lib/index.js:21"
         },
         {
             "message": "Missing item type\nHandle Command-line usage",
-            "line": " /Users/shakyshane/Sites/os-browser-sync/lib/index.js:27"
+            "line": " /Users/shakyshane/Sites/os-browser-sync/lib/index.js:31"
         }
     ]
 }

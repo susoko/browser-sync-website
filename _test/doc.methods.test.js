@@ -25,7 +25,7 @@ describe("Modding data", function(){
 
     it("should add escape chars to param types", function(){
         var reload = _.find(items, {name: "reload"});
-        assert.equal(reload.params[0].type, "String\\|Array\\|Object");
+        assert.equal(reload.params[0].type, "String|Array|Object");
     });
     it("should add params empty array if not exists", function(){
         var active = _.find(items, {name: "active"});

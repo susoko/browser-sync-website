@@ -210,15 +210,18 @@ $spacing: $base-spacing+$half-spacing;
             }
         }
 
-        &:first-child {
+        &.name {
             @include font-size(20px);
             color: black;
             font-weight: $hn-font-weight;
         }
 
+        &.type {
+            border-bottom: 1px solid #ebebeb;
+        }
+
         &.desc {
             padding-top: $half-spacing;
-            border-top: 1px solid #ebebeb;
         }
 
         .recede {

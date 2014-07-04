@@ -1919,14 +1919,15 @@ code, samp {
         font-size: 14px;
         font-size: 0.875rem;
         margin-left: 4px; }
-    .param-list li:first-child {
+    .param-list li.name {
       font-size: 20px;
       font-size: 1.25rem;
       color: black;
       font-weight: 700; }
+    .param-list li.type {
+      border-bottom: 1px solid #ebebeb; }
     .param-list li.desc {
-      padding-top: 12px;
-      border-top: 1px solid #ebebeb; }
+      padding-top: 12px; }
     .param-list li .recede {
       color: #9e9e9e; }
 

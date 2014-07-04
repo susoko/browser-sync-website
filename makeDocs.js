@@ -3,15 +3,17 @@ var data = require("./_test/fixtures/api.json");
 var docGen = require("./docgen");
 var _    = require("lodash");
 _.templateSettings.interpolate = /{:([\s\S]+?):}/g;
-var methodTemplate = _.template(fs.readFileSync("./_tmp/_api.tmpl.html", "utf-8"));
-var mdTemp = _.template(fs.readFileSync("./_docs/api.md", "utf-8"));
+var methodTemplate  = _.template(fs.readFileSync("./_tmp/_api.tmpl.html", "utf-8"));
+var optionsTemplate = _.template(fs.readFileSync("./_tmp/_option.tmpl.html", "utf-8"));
+var mdTemp          = _.template(fs.readFileSync("./_docs/api.md", "utf-8"));
+var optTemp         = _.template(fs.readFileSync("./_docs/options.md", "utf-8"));
 
 var excluded = [
     "use"
 ];
 
-function getSnippetPath(name) {
-    return "./_includes/scripts/api/%s.js".replace("%s", name);
+function getSnippetPath(name, path) {
+    return "./_includes/scripts/%p/%s.js".replace("%s", name).replace("%p", path);
 }
 
 /**
@@ -36,17 +38,20 @@ function previewTweaks(item) {
 }
 
 /**
- * Process!
+ * Process API
  */
 var newItems = docGen.prepareClassitems(data.classitems)
     .filter(removeExcluded)
     .map(previewTweaks)
     .reduce(buildMarkup, "");
+fs.writeFileSync("./docs/api.md", mdTemp({data: newItems}));
 
 /**
- * Write the file
+ * Process OPTIONS
  */
-fs.writeFileSync("./docs/api.md", mdTemp({data: newItems}));
+var newItems = docGen.prepareOptions(data.classitems)
+    .reduce(optionsMarkup, "");
+fs.writeFileSync("./docs/options.md", optTemp({data: newItems}));
 
 /**
  * Build the markup for each item
@@ -56,15 +61,7 @@ fs.writeFileSync("./docs/api.md", mdTemp({data: newItems}));
  */
 function buildMarkup (combined, item) {
 
-    item.snippet = null;
-
-    try {
-        if (fs.existsSync(getSnippetPath(item.name))) {
-            item.snippet = fs.readFileSync(getSnippetPath(item.name), "utf-8");
-        }
-    } catch (e) {
-        console.log(e.message);
-    }
+    item.snippet = getSnippet(item, "api");
 
     if (!item.description) {
         item.description = "";
@@ -73,3 +70,41 @@ function buildMarkup (combined, item) {
     return combined + methodTemplate(item);
 }
 
+/**
+ * Build the markup for each item
+ * @param combined
+ * @param item
+ * @returns {*}
+ */
+function optionsMarkup (combined, item) {
+
+    item.snippet = getSnippet(item, "options");
+
+    if (!item.description) {
+        item.description = "";
+    }
+
+    return combined + optionsTemplate(item);
+}
+
+
+function getSnippet(item, type) {
+
+    var snippet = null;
+
+    try {
+
+        var snippetPath = getSnippetPath(item.name, type);
+
+        if (fs.existsSync(snippetPath)) {
+            snippet = fs.readFileSync(snippetPath, "utf-8");
+        }
+
+    } catch (e) {
+
+        console.log(e.message);
+
+    }
+
+    return snippet;
+}

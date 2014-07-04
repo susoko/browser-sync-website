@@ -81,6 +81,10 @@ function escapeParams(item) {
     return item;
 }
 
+function isApiMethod(item) {
+    return item.module === "BrowserSync";
+}
+
 /**
  * Main exported function for preparing view data
  * @param items
@@ -89,6 +93,7 @@ function escapeParams(item) {
 function prepareClassitems(items) {
     if (items.length) {
         return items
+            .filter(isApiMethod)
             .filter(hasNameFilter)
             .map(addParams)
             .map(addPreview)
@@ -97,4 +102,21 @@ function prepareClassitems(items) {
     return items;
 }
 
+function isOption(item) {
+    return item.module === "BrowserSync.options";
+}
+/**
+ * Main exported function for preparing view data
+ * @param items
+ * @returns {*}
+ */
+function prepareOptions(items) {
+    if (items.length) {
+        return items
+            .filter(isOption);
+    }
+    return items;
+}
+
 module.exports.prepareClassitems = prepareClassitems;
+module.exports.prepareOptions = prepareOptions;
