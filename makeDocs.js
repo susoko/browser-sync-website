@@ -1,18 +1,26 @@
-var fs   = require("fs");
-var cp   = require("child_process");
-var lib  = "/Users/shakyshane/Sites/os-browser-sync";
-var doc  = "/doc/yuidoc.json";
-var docGen = require("./docgen");
-var _    = require("lodash");
+var fs      = require("fs");
+var cp      = require("child_process");
+var lib     = "/Users/shakyshane/Sites/os-browser-sync";
+var doc     = "/doc/yuidoc.json";
+var docGen  = require("./docgen");
+var _       = require("lodash");
 _.templateSettings.interpolate = /{:([\s\S]+?):}/g;
-var methodTemplate  = _.template(fs.readFileSync("./_tmp/_api.tmpl.html", "utf-8"));
-var optionsTemplate = _.template(fs.readFileSync("./_tmp/_option.tmpl.html", "utf-8"));
+
 var mdTemp          = _.template(fs.readFileSync("./_docs/api.md", "utf-8"));
 var optTemp         = _.template(fs.readFileSync("./_docs/options.md", "utf-8"));
+
+function getTemplate(name) {
+
+    var source = fs.readFileSync("./_tmp/_%s.tmpl.html".replace("%s", name), "utf-8");
+    var template = new Templater(source).process();
+
+    return  _.template(template);
+}
 
 var excluded = [
     "use"
 ];
+
 
 /**
  * Build docs & run
@@ -40,8 +48,12 @@ cp.spawn('gulp', ['docs', '--cwd=' + lib], {stdio: 'inherit'}).on('close', funct
     fs.writeFileSync("./docs/options.md", optTemp({data: optItems}));
 });
 
-
-
+/**
+ * Resolve path to snippets
+ * @param name
+ * @param path
+ * @returns {string}
+ */
 function getSnippetPath(name, path) {
     return "./_includes/scripts/%p/%s.js".replace("%s", name).replace("%p", path);
 }
@@ -81,7 +93,7 @@ function buildMarkup (combined, item) {
         item.description = "";
     }
 
-    return combined + methodTemplate(item);
+    return combined + getTemplate("api")(item);
 }
 
 /**
@@ -98,7 +110,7 @@ function optionsMarkup (combined, item) {
         item.description = "";
     }
 
-    return combined + optionsTemplate(item);
+    return combined + getTemplate("option")(item);
 }
 
 /**
@@ -127,3 +139,76 @@ function getSnippet(item, type) {
 
     return snippet;
 }
+
+/**
+ * @param string
+ * @returns {string}
+ */
+function ifTemplate(string) {
+
+    var regex = /<% if ([a-z].+?) %>/g;
+    var regex2 = /<% \/if %>/g;
+
+    this.string = this.string.replace(regex, function () {
+        return "<% if ("+arguments[1]+") { %>";
+    }).replace(regex2, "<% } %>");
+
+
+    return this;
+}
+
+
+/**
+ * @param string
+ * @returns {string}
+ */
+function eachTemplate() {
+
+    var regex    = /<% loop ([a-zA-Z].+?) as ([a-z].+?) %>/g;
+    var regexEnd = /<% \/loop %>/g;
+
+    this.string = this.string.replace(regex, function () {
+        return replace(arguments);
+    }).replace(regexEnd, "<% }); %>");
+
+    function replace(args) {
+        return "<% $1.forEach(function($2){ %>"
+            .replace("$1", args[1])
+            .replace("$2", args[2]);
+    }
+
+    return this;
+}
+
+/**
+ * @returns {Templater}
+ */
+function elseTemplate() {
+
+    var regex = /<% else %>/g;
+
+    this.string = this.string.replace(regex, function () {
+        return "<% } else { %>";
+    });
+
+    return this;
+}
+
+var Templater = function (string) {
+
+    this.string = string;
+    this.ifTemplate = ifTemplate;
+    this.eachTemplate = eachTemplate;
+    this.elseTemplate = elseTemplate;
+
+    this.process = function () {
+
+        this.ifTemplate();
+        this.elseTemplate();
+        this.eachTemplate();
+
+        return this.string;
+    };
+};
+
+module.exports.Templater = Templater;

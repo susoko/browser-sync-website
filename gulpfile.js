@@ -44,7 +44,7 @@ gulp.task("jekyll-build", ["docs-build"],  function (done) {
 /**
  * Build the Jekyll Site
  */
-gulp.task("jekyll-build-dev", ["docs-build"], function (done) {
+gulp.task("jekyll-build-dev", function (done) {
     browserSync.notify(messages.jekyllBuild);
     return getjekyllArgs(done, "prod");
 });

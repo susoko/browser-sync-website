@@ -131,7 +131,19 @@ function fixGhostMode(item) {
  * @returns {*}
  */
 function fixDefaults(item) {
-    item.defaultValue = item.default || null;
+    item.defaultValue = item.default || item.optdefault || null;
+    return item;
+}
+
+/**
+ *
+ */
+function addSubprops(item) {
+    if (_.isUndefined(item.subprops)) {
+        item.subprops = null;
+    } else {
+        item.subprops = item.subprops.map(fixDefaults);
+    }
     return item;
 }
 
@@ -145,6 +157,7 @@ function prepareOptions(items) {
         return items
             .filter(isOption)
             .map(fixGhostMode)
+            .map(addSubprops)
             .map(fixDefaults);
     }
     return items;

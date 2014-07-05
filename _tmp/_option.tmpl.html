@@ -2,7 +2,15 @@
 <h3 id="option-{:name:}">{: name :} <a href="#option-{:name:}" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">{: type :}</span></li>
+    <% if subprops %>
+        <ul>
+            <% loop subprops as item %>
+                <li>{: item.name :} - Default: {: item.defaultValue :}</li>
+            <% /loop %>
+        </ul>
+    <% else %>
     <li class="default">Default: <span class="color-teal">{: defaultValue :}</span></li>
+    <% /if %>
 </ul>
 
 {: description :}
