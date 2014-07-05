@@ -215,21 +215,73 @@
             "name": "ghostMode",
             "type": "Object",
             "class": "",
-            "module": "BrowserSync.options"
+            "module": "BrowserSync.options",
+            "subprops": [
+                {
+                    "name": "click",
+                    "description": "",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "true"
+                },
+                {
+                    "name": "scroll",
+                    "description": "",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "true"
+                },
+                {
+                    "name": "location",
+                    "description": "",
+                    "type": "Boolean",
+                    "optional": true,
+                    "optdefault": "false"
+                },
+                {
+                    "name": "forms",
+                    "description": "",
+                    "type": "Boolean",
+                    "props": [
+                        {
+                            "name": "submit",
+                            "description": "",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": "true"
+                        },
+                        {
+                            "name": "inputs",
+                            "description": "",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": "true"
+                        },
+                        {
+                            "name": "toggles",
+                            "description": "",
+                            "type": "Boolean",
+                            "optional": true,
+                            "optdefault": "true"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 25,
+            "line": 32,
+            "description": "Can be either \"info\", \"debug\" or \"silent\"",
             "itemtype": "property",
             "name": "logLevel",
-            "type": "String can be one of \"info\", \"debug\" or \"silent\"",
+            "type": "String",
             "default": "info",
             "class": "",
             "module": "BrowserSync.options"
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 31,
+            "line": 39,
             "itemtype": "property",
             "name": "server",
             "type": "Object|Boolean",
@@ -239,7 +291,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 37,
+            "line": 45,
             "itemtype": "property",
             "name": "proxy",
             "type": "String|Boolean",
@@ -249,7 +301,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 43,
+            "line": 51,
             "itemtype": "property",
             "name": "port",
             "type": "Number",
@@ -259,7 +311,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 49,
+            "line": 57,
             "itemtype": "property",
             "name": "open",
             "type": "Boolean",
@@ -269,7 +321,16 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 55,
+            "line": 62,
+            "itemtype": "property",
+            "name": "tunnel",
+            "type": "String|Boolean",
+            "class": "",
+            "module": "BrowserSync.options"
+        },
+        {
+            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
+            "line": 67,
             "itemtype": "property",
             "name": "browser",
             "type": "String|Array",
@@ -279,7 +340,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 61,
+            "line": 73,
             "itemtype": "property",
             "name": "xip",
             "type": "Boolean",
@@ -289,7 +350,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 67,
+            "line": 79,
             "itemtype": "property",
             "name": "hostnameSuffix",
             "type": "Boolean|String",
@@ -299,7 +360,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 73,
+            "line": 85,
             "itemtype": "property",
             "name": "notify",
             "type": "Boolean",
@@ -309,7 +370,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 79,
+            "line": 91,
             "description": "Number in milliseconds to wait before emitting file changed event",
             "itemtype": "property",
             "name": "debounce",
@@ -320,7 +381,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 86,
+            "line": 98,
             "itemtype": "property",
             "name": "scrollProportionally",
             "type": "Boolean",
@@ -330,7 +391,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 92,
+            "line": 104,
             "itemtype": "property",
             "name": "scrollThrottle",
             "type": "Number",
@@ -340,7 +401,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 98,
+            "line": 110,
             "itemtype": "property",
             "name": "reloadDelay",
             "type": "Number",
@@ -350,7 +411,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 104,
+            "line": 116,
             "itemtype": "property",
             "name": "injectChanges",
             "type": "Boolean",
@@ -360,7 +421,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 110,
+            "line": 122,
             "itemtype": "property",
             "name": "startPath",
             "type": "String|Null",
@@ -370,27 +431,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 145,
-            "itemtype": "property",
-            "name": "debugInfo",
-            "type": "Boolean",
-            "default": "true",
-            "class": "",
-            "module": "BrowserSync.options"
-        },
-        {
-            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 151,
-            "itemtype": "property",
-            "name": "injectFileTypes",
-            "type": "Array",
-            "default": "[\"css\", \"png\", \"jpg\", \"jpeg\", \"svg\", \"gif\", \"webp\"]",
-            "class": "",
-            "module": "BrowserSync.options"
-        },
-        {
-            "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 157,
+            "line": 128,
             "description": "Whether to minify client script, or not.",
             "itemtype": "property",
             "name": "minify",
@@ -401,7 +442,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 164,
+            "line": 135,
             "itemtype": "property",
             "name": "logConnections",
             "type": "Boolean",
@@ -411,7 +452,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 170,
+            "line": 141,
             "itemtype": "property",
             "name": "host",
             "type": "String",
@@ -421,7 +462,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 176,
+            "line": 147,
             "itemtype": "property",
             "name": "codeSync",
             "type": "Boolean",
@@ -431,7 +472,7 @@
         },
         {
             "file": "/Users/shakyshane/Sites/os-browser-sync/lib/default-config.js",
-            "line": 182,
+            "line": 153,
             "itemtype": "property",
             "name": "timestamps",
             "type": "Boolean",

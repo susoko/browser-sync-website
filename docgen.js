@@ -102,9 +102,39 @@ function prepareClassitems(items) {
     return items;
 }
 
+/**
+ * Filter options
+ * @param item
+ * @returns {boolean}
+ */
 function isOption(item) {
     return item.module === "BrowserSync.options";
 }
+
+/**
+ * Fix the ghostModeOption
+ * @param item
+ * @returns {*}
+ */
+function fixGhostMode(item) {
+
+    if (item.name !== "ghostMode") {
+        return item;
+    }
+
+    return item;
+//    console.log(item);
+}
+
+/**
+ * @param item
+ * @returns {*}
+ */
+function fixDefaults(item) {
+    item.defaultValue = item.default || null;
+    return item;
+}
+
 /**
  * Main exported function for preparing view data
  * @param items
@@ -113,7 +143,9 @@ function isOption(item) {
 function prepareOptions(items) {
     if (items.length) {
         return items
-            .filter(isOption);
+            .filter(isOption)
+            .map(fixGhostMode)
+            .map(fixDefaults);
     }
     return items;
 }

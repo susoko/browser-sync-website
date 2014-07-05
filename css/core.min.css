@@ -190,9 +190,9 @@ button,input,label,option,select,textarea{cursor:pointer}
 .highlight .g{color:#d0d0d0}
 .highlight .k{color:#6ab825;font-weight:700}
 .highlight .l,.highlight .n,.highlight .o,.highlight .p,.highlight .x{color:#d0d0d0}
-.highlight .cm{color:#999;font-style:italic}
+.highlight .cm{color:#999}
 .highlight .cp{color:#cd2828;font-weight:700}
-.highlight .c1{color:#999;font-style:italic}
+.highlight .c1{color:#999}
 .highlight .cs{color:#e50808;font-weight:700;background-color:#520000}
 .highlight .gd{color:#d22323}
 .highlight .ge{color:#d0d0d0;font-style:italic}
@@ -225,7 +225,7 @@ button,input,label,option,select,textarea{cursor:pointer}
 .highlight .nv{color:gray}
 .highlight .ow{color:#6ab825;font-weight:700}
 .highlight .w{color:#666}
-.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#3677a9}
+.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#64a0ce}
 .highlight .s1,.highlight .s2,.highlight .sb,.highlight .sc,.highlight .sd,.highlight .se,.highlight .sh,.highlight .si,.highlight .sr,.highlight .ss,.highlight .sx{color:#d3ed13}
 .highlight .bp{color:#24909d}
 .highlight .vc,.highlight .vg,.highlight .vi{color:#40ffff}

@@ -1,5 +1,7 @@
 var fs   = require("fs");
-var data = require("./_test/fixtures/api.json");
+var cp   = require("child_process");
+var lib  = "/Users/shakyshane/Sites/os-browser-sync";
+var doc  = "/doc/yuidoc.json";
 var docGen = require("./docgen");
 var _    = require("lodash");
 _.templateSettings.interpolate = /{:([\s\S]+?):}/g;
@@ -11,6 +13,34 @@ var optTemp         = _.template(fs.readFileSync("./_docs/options.md", "utf-8"))
 var excluded = [
     "use"
 ];
+
+/**
+ * Build docs & run
+ */
+cp.spawn('gulp', ['docs', '--cwd=' + lib], {stdio: 'inherit'}).on('close', function () {
+
+    var data = require(lib + doc);
+
+    /**
+     * Process API
+     */
+    var apiItems = docGen.prepareClassitems(data.classitems)
+        .filter(removeExcluded)
+        .map(previewTweaks)
+        .reduce(buildMarkup, "");
+
+    fs.writeFileSync("./docs/api.md", mdTemp({data: apiItems}));
+
+    /**
+     * Process OPTIONS
+     */
+    var optItems = docGen.prepareOptions(data.classitems)
+        .reduce(optionsMarkup, "");
+
+    fs.writeFileSync("./docs/options.md", optTemp({data: optItems}));
+});
+
+
 
 function getSnippetPath(name, path) {
     return "./_includes/scripts/%p/%s.js".replace("%s", name).replace("%p", path);
@@ -36,22 +66,6 @@ function previewTweaks(item) {
     }
     return item;
 }
-
-/**
- * Process API
- */
-var newItems = docGen.prepareClassitems(data.classitems)
-    .filter(removeExcluded)
-    .map(previewTweaks)
-    .reduce(buildMarkup, "");
-fs.writeFileSync("./docs/api.md", mdTemp({data: newItems}));
-
-/**
- * Process OPTIONS
- */
-var newItems = docGen.prepareOptions(data.classitems)
-    .reduce(optionsMarkup, "");
-fs.writeFileSync("./docs/options.md", optTemp({data: newItems}));
 
 /**
  * Build the markup for each item
@@ -87,7 +101,12 @@ function optionsMarkup (combined, item) {
     return combined + optionsTemplate(item);
 }
 
-
+/**
+ * Look for related snippet
+ * @param item
+ * @param type
+ * @returns {*}
+ */
 function getSnippet(item, type) {
 
     var snippet = null;
