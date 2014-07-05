@@ -10,7 +10,7 @@ simply `require` the BrowserSync module like you would any other. This will give
 you access to the public methods detailed below.
 
 {% highlight javascript %}
-{% include scripts/api/require.js %}
+{% include snippets/api/require.js %}
 {% endhighlight %}
 
 

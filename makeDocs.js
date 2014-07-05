@@ -55,7 +55,7 @@ cp.spawn('gulp', ['docs', '--cwd=' + lib], {stdio: 'inherit'}).on('close', funct
  * @returns {string}
  */
 function getSnippetPath(name, path) {
-    return "./_includes/scripts/%p/%s.js".replace("%s", name).replace("%p", path);
+    return "./_includes/snippets/%p/%s.js".replace("%s", name).replace("%p", path);
 }
 
 /**
@@ -126,6 +126,8 @@ function getSnippet(item, type) {
     try {
 
         var snippetPath = getSnippetPath(item.name, type);
+
+        console.log(snippetPath);
 
         if (fs.existsSync(snippetPath)) {
             snippet = fs.readFileSync(snippetPath, "utf-8");

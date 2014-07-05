@@ -11,7 +11,7 @@ for more info.
 {{ site.urls }}
 
 {% highlight javascript %}
-{% include scripts/options/require.js %}
+{% include snippets/options/require.js %}
 {% endhighlight %}
 
 {: data :}

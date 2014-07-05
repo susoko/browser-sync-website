@@ -88,7 +88,7 @@ gulp.task("sass", function () {
  * Lint code snippets
  */
 gulp.task("lint", function () {
-    gulp.src(["_includes/scripts/**/*.js", "gulpfile.js"])
+    gulp.src(["_includes/snippets/**/*.js", "gulpfile.js"])
         .pipe(jshint(".jshintrc"))
         .pipe(jshint.reporter("default"))
         .pipe(jshint.reporter("fail"));
@@ -119,4 +119,4 @@ gulp.task("watch", function () {
  */
 gulp.task("default", ["browser-sync", "watch"]);
 
-gulp.task("build", ["lint", "sass", "jekyll-build"]);
+gulp.task("build", ["sass", "docs-build", "jekyll-build"]);
