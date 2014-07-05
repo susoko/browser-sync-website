@@ -3,9 +3,9 @@
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">{: type :}</span></li>
     <% if subprops %>
-        <ul>
+        <ul class="nav nav--stacked subprops">
             <% loop subprops as item %>
-                <li>{: item.name :} - Default: {: item.defaultValue :}</li>
+                <li><b>{: item.name :}</b> - Default: <span class="color-teal">{: item.defaultValue :}</span></li>
             <% /loop %>
         </ul>
     <% else %>

@@ -1906,9 +1906,6 @@ code, samp {
   list-style: none;
   margin-bottom: 24px;
   padding-left: 12px; }
-  @media only screen and (min-width: 600px) {
-    .param-list {
-      padding-left: 24px; } }
   .param-list li {
     color: black; }
     .param-list li.name, .param-list li.type {
@@ -1936,6 +1933,10 @@ code, samp {
 
 .color-teal {
   color: #256b8d; }
+
+.subprops {
+  margin-top: 12px;
+  padding-left: 12px; }
 
 .steps {
   margin-left: 0;

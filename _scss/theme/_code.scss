@@ -193,10 +193,6 @@ $spacing: $base-spacing+$half-spacing;
     margin-bottom: $base-spacing;
     padding-left: $half-spacing;
 
-    @include media-query(min, $lap-start) {
-        padding-left: $base-spacing;
-    }
-
     li {
 
         color: $black;
@@ -240,4 +236,9 @@ $spacing: $base-spacing+$half-spacing;
 
 .color-teal {
     color: $teal;
+}
+
+.subprops {
+    margin-top: $half-spacing;
+    padding-left: $half-spacing;
 }

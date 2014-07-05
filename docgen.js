@@ -69,15 +69,28 @@ function sortItems(item) {
  * @param item
  * @returns {*}
  */
-function escapeParams(item) {
+function fixParams(item) {
 
-    if (item.params.length) {
+    if (item.params && item.params.length) {
 
         item.params = item.params.map(function (param) {
-            param.type = param.type.replace(/\|/g, "\\|");
+            param.type = replacePipe(param.type);
             return param;
         });
+    } else {
+        if (item.itemtype === "property") {
+            if (item.type) {
+                item.type = replacePipe(item.type);
+            }
+        }
     }
+
+    function replacePipe(string) {
+        return string.replace(/\|/g, " | ");
+    }
+
+
+
     return item;
 }
 
@@ -97,6 +110,7 @@ function prepareClassitems(items) {
             .filter(hasNameFilter)
             .map(addParams)
             .map(addPreview)
+            .map(fixParams)
             .sort(sortItems);
     }
     return items;
@@ -123,7 +137,6 @@ function fixGhostMode(item) {
     }
 
     return item;
-//    console.log(item);
 }
 
 /**
@@ -158,6 +171,7 @@ function prepareOptions(items) {
             .filter(isOption)
             .map(fixGhostMode)
             .map(addSubprops)
+            .map(fixParams)
             .map(fixDefaults);
     }
     return items;

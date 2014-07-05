@@ -1,6 +1,6 @@
 var gulp        = require("gulp");
 var browserSync = require("browser-sync");
-//var sass        = require("gulp-sass");
+var plumber     = require('gulp-plumber');
 var sass        = require("gulp-ruby-sass");
 var jshint      = require("gulp-jshint");
 var minifyCSS   = require("gulp-minify-css");
@@ -64,16 +64,22 @@ gulp.task("browser-sync", ["sass", "jekyll-build-dev"], function() {
         server: {
             baseDir: "_site"
         },
-        online: false
-//        tunnel: "shane"
+        online: false,
+        open: false
     });
 });
+
+var sassError = function (obj) {
+    browserSync.notify(obj.message);
+};
 
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
  */
 gulp.task("sass", function () {
+    browserSync.notify("Compiling SASS...");
     gulp.src("_scss/core.scss")
+        .pipe(plumber({errorHandler: sassError}))
         .pipe(sass())
         .pipe(prefix(["last 15 versions", "> 1%", "ie 8", "ie 7"], { cascade: true }))
         .pipe(gulp.dest("_site/css"))
@@ -106,7 +112,6 @@ gulp.task("watch", function () {
         "_posts/*",
         "docs/*",
         "*.md",
-        "_includes/*",
         "_plugins/*",
         "_includes/**/*",
         "_config.yml"
