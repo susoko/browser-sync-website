@@ -167,14 +167,15 @@ $spacing: $base-spacing+$half-spacing;
     }
 
     &.docs {
+        text-align: center;
 
         ul {
 
-            margin-left: $base-spacing;
+//            margin-left: $base-spacing;
             margin-bottom: $base-spacing*2;
 
             li {
-                display: block;
+                display: inline-block;
                 p {
                     margin-bottom: 0;
                 }
