@@ -1,6 +1,6 @@
 .highlight {
     .hll { background-color: #404040 }
-    .c { color: #999999; font-style: italic } /* Comment */
+    .c { color: #999999; /*font-style: italic*/ } /* Comment */
     .err { color: #a61717; background-color: #e3d2d2 } /* Error */
     .g { color: #d0d0d0 } /* Generic */
     .k { color: #6ab825; font-weight: bold } /* Keyword */
@@ -14,7 +14,7 @@
     .c1 { color: #999999; } /* Comment.Single */
     .cs { color: #e50808; font-weight: bold; background-color: #520000 } /* Comment.Special */
     .gd { color: #d22323 } /* Generic.Deleted */
-    .ge { color: #d0d0d0; font-style: italic } /* Generic.Emph */
+    .ge { color: #d0d0d0; /*font-style: italic*/ } /* Generic.Emph */
     .gr { color: #d22323 } /* Generic.Error */
     .gh { color: #ffffff; font-weight: bold } /* Generic.Heading */
     .gi { color: #589819 } /* Generic.Inserted */

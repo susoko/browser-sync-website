@@ -185,7 +185,7 @@ button,input,label,option,select,textarea{cursor:pointer}
 .desk--seven-twelfths{width:58.333%}
 .desk--eleven-twelfths{width:91.666%}}
 .highlight .hll{background-color:#404040}
-.highlight .c{color:#999;font-style:italic}
+.highlight .c{color:#999}
 .highlight .err{color:#a61717;background-color:#e3d2d2}
 .highlight .g{color:#d0d0d0}
 .highlight .k{color:#6ab825;font-weight:700}
@@ -195,7 +195,7 @@ button,input,label,option,select,textarea{cursor:pointer}
 .highlight .c1{color:#999}
 .highlight .cs{color:#e50808;font-weight:700;background-color:#520000}
 .highlight .gd{color:#d22323}
-.highlight .ge{color:#d0d0d0;font-style:italic}
+.highlight .ge{color:#d0d0d0}
 .highlight .gr{color:#d22323}
 .highlight .gh{color:#fff;font-weight:700}
 .highlight .gi{color:#589819}
@@ -234,6 +234,9 @@ hr{clear:both;margin-bottom:24px;border:none;border-bottom:1px solid #ccc;paddin
 html{overflow-y:scroll;overflow-x:hidden;min-height:100%;max-width:100%;font:100%/1.5 "Titillium Web","Lucida Grande","Lucida Sans",sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-webkit-font-smoothing:antialiased}
 body{max-width:100%;overflow-x:hidden;background:#fff;color:#333;text-rendering:optimizeLegibility}
 .lede{font-size:20px;font-size:1.25rem}
+table tr td:first-child{white-space:nowrap;font-weight:700}
+table td{padding:12px 6px}
+table tbody tr:nth-child(odd){background:#fafafa}
 .nav,.nav--float,.nav--inline{margin-left:0;list-style:none}
 .nav--float>li>a,.nav--inline>li>a,.nav>li>a{display:block}
 .nav--float>li.active>a,.nav--inline>li.active>a,.nav>li.active>a{cursor:default}

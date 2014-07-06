@@ -18,7 +18,7 @@ function getjekyllArgs(cb, env) {
 
     var args = jekylArgs;
 
-    if (env === "prod") {
+    if (env === "prod" ) {
         var newconfig = [args.pop(), "_config-dev.yml"].join(",");
         args.push(newconfig);
     }

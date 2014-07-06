@@ -33,3 +33,20 @@ body {
 .lede {
     @include font-size($lede-size);
 }
+
+table {
+    tr {
+        td:first-child {
+            white-space: nowrap;
+            font-weight: bold;
+        }
+    }
+    td {
+        padding: $half-spacing $half-spacing/2 ;
+    }
+    tbody {
+        tr:nth-child(odd) {
+            background: #fafafa;
+        }
+    }
+}

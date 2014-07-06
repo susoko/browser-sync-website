@@ -15,8 +15,9 @@ for more info.
 
 <h3 id="option-files">files <a href="#option-files" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Array | String</span></li>
+    <li class="type">Type: <span class="color-teal">Array | String</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">false</span></li>
     
 </ul>
@@ -41,8 +42,9 @@ files: ["app/css/*.css", "app/**.*.html", "app/js/**/*.js"]
 {% endhighlight %}
 <h3 id="option-server">server <a href="#option-server" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Object | Boolean</span></li>
+    <li class="type">Type: <span class="color-teal">Object | Boolean</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">false</span></li>
     
 </ul>
@@ -104,8 +106,9 @@ server: {
 {% endhighlight %}
 <h3 id="option-proxy">proxy <a href="#option-proxy" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">String | Boolean</span></li>
+    <li class="type">Type: <span class="color-teal">String | Boolean</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">false</span></li>
     
 </ul>
@@ -125,8 +128,9 @@ proxy: "localhost/site1"
 {% endhighlight %}
 <h3 id="option-port">port <a href="#option-port" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Number</span></li>
+    <li class="type">Type: <span class="color-teal">Number</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">3000</span></li>
     
 </ul>
@@ -139,7 +143,7 @@ port: 8080
 {% endhighlight %}
 <h3 id="option-ghostMode">ghostMode <a href="#option-ghostMode" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Object</span></li>
+    <li class="type">Type: <span class="color-teal">Object</span>
     
         <ul class="nav nav--stacked subprops">
             
@@ -152,6 +156,7 @@ port: 8080
                 <li><b>forms</b> - Default: <span class="color-teal">true</span></li>
             
         </ul>
+    </li>
     
 </ul>
 
@@ -171,8 +176,9 @@ ghostMode: false
 {% endhighlight %}
 <h3 id="option-logLevel">logLevel <a href="#option-logLevel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">String</span></li>
+    <li class="type">Type: <span class="color-teal">String</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">info</span></li>
     
 </ul>
@@ -192,8 +198,9 @@ logLevel: "silent"
 {% endhighlight %}
 <h3 id="option-tunnel">tunnel <a href="#option-tunnel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">String | Boolean</span></li>
+    <li class="type">Type: <span class="color-teal">String | Boolean</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">null</span></li>
     
 </ul>
@@ -210,8 +217,9 @@ tunnel: "my-private-site"
 {% endhighlight %}
 <h3 id="option-online">online <a href="#option-online" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span></li>
+    <li class="type">Type: <span class="color-teal">Boolean</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">undefined</span></li>
     
 </ul>
@@ -229,8 +237,9 @@ online: false
 {% endhighlight %}
 <h3 id="option-open">open <a href="#option-open" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span></li>
+    <li class="type">Type: <span class="color-teal">Boolean</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
@@ -243,8 +252,9 @@ open: false
 {% endhighlight %}
 <h3 id="option-browser">browser <a href="#option-browser" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">String | Array</span></li>
+    <li class="type">Type: <span class="color-teal">String | Array</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">default</span></li>
     
 </ul>
@@ -260,8 +270,9 @@ browser: ["google chrome", "firefox"]
 {% endhighlight %}
 <h3 id="option-xip">xip <a href="#option-xip" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span></li>
+    <li class="type">Type: <span class="color-teal">Boolean</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">false</span></li>
     
 </ul>
@@ -276,8 +287,9 @@ xip: true
 {% endhighlight %}
 <h3 id="option-notify">notify <a href="#option-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span></li>
+    <li class="type">Type: <span class="color-teal">Boolean</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
@@ -291,8 +303,9 @@ notify: false
 {% endhighlight %}
 <h3 id="option-debounce">debounce <a href="#option-debounce" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Number</span></li>
+    <li class="type">Type: <span class="color-teal">Number</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">0</span></li>
     
 </ul>
@@ -306,8 +319,9 @@ debounce: 200
 {% endhighlight %}
 <h3 id="option-scrollProportionally">scrollProportionally <a href="#option-scrollProportionally" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span></li>
+    <li class="type">Type: <span class="color-teal">Boolean</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
@@ -319,8 +333,9 @@ scrollProportionally: false // Sync viewports to TOP position
 {% endhighlight %}
 <h3 id="option-scrollThrottle">scrollThrottle <a href="#option-scrollThrottle" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Number</span></li>
+    <li class="type">Type: <span class="color-teal">Number</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">0</span></li>
     
 </ul>
@@ -332,8 +347,9 @@ scrollThrottle: 100 // only send scroll events every 100 milliseconds
 {% endhighlight %}
 <h3 id="option-reloadDelay">reloadDelay <a href="#option-reloadDelay" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Number</span></li>
+    <li class="type">Type: <span class="color-teal">Number</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">0</span></li>
     
 </ul>
@@ -346,8 +362,9 @@ reloadDelay: 2000
 {% endhighlight %}
 <h3 id="option-injectChanges">injectChanges <a href="#option-injectChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span></li>
+    <li class="type">Type: <span class="color-teal">Boolean</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
@@ -363,8 +380,9 @@ injectChanges: false,
 {% endhighlight %}
 <h3 id="option-startPath">startPath <a href="#option-startPath" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">String | Null</span></li>
+    <li class="type">Type: <span class="color-teal">String | Null</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">null</span></li>
     
 </ul>
@@ -377,8 +395,9 @@ startPath: "/info.php"
 {% endhighlight %}
 <h3 id="option-minify">minify <a href="#option-minify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span></li>
+    <li class="type">Type: <span class="color-teal">Boolean</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
@@ -392,8 +411,9 @@ minify: false
 {% endhighlight %}
 <h3 id="option-logConnections">logConnections <a href="#option-logConnections" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span></li>
+    <li class="type">Type: <span class="color-teal">Boolean</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">false</span></li>
     
 </ul>
@@ -409,8 +429,9 @@ logConnections: false
 {% endhighlight %}
 <h3 id="option-host">host <a href="#option-host" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">String</span></li>
+    <li class="type">Type: <span class="color-teal">String</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">null</span></li>
     
 </ul>
@@ -423,8 +444,9 @@ host: "192.168.1.1"
 {% endhighlight %}
 <h3 id="option-codeSync">codeSync <a href="#option-codeSync" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span></li>
+    <li class="type">Type: <span class="color-teal">Boolean</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
@@ -437,8 +459,9 @@ codeSync: true,
 {% endhighlight %}
 <h3 id="option-timestamps">timestamps <a href="#option-timestamps" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span></li>
+    <li class="type">Type: <span class="color-teal">Boolean</span>
     
+    </li>
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>

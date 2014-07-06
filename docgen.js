@@ -179,3 +179,11 @@ function prepareOptions(items) {
 
 module.exports.prepareClassitems = prepareClassitems;
 module.exports.prepareOptions = prepareOptions;
+module.exports.prepareCommandLineOptions = function (opts) {
+    return _.map(opts, function (value, key) {
+        return {
+            name: key,
+            desc: value
+        }
+    });
+};

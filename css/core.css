@@ -1309,7 +1309,7 @@ textarea:focus {
     background-color: #404040; }
   .highlight .c {
     color: #999999;
-    font-style: italic; }
+    /*font-style: italic*/ }
   .highlight .err {
     color: #a61717;
     background-color: #e3d2d2; }
@@ -1343,7 +1343,7 @@ textarea:focus {
     color: #d22323; }
   .highlight .ge {
     color: #d0d0d0;
-    font-style: italic; }
+    /*font-style: italic*/ }
   .highlight .gr {
     color: #d22323; }
   .highlight .gh {
@@ -1491,6 +1491,14 @@ body {
 .lede {
   font-size: 20px;
   font-size: 1.25rem; }
+
+table tr td:first-child {
+  white-space: nowrap;
+  font-weight: bold; }
+table td {
+  padding: 12px 6px; }
+table tbody tr:nth-child(odd) {
+  background: #fafafa; }
 
 /**
  * Inline using floats
