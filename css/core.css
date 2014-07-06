@@ -1778,7 +1778,17 @@ code, samp {
   font-size: 14px;
   font-size: 0.875rem;
   font-family: Consolas, Monaco, monospace;
-  line-height: 1.25; }
+  line-height: 1.25;
+  background: #f6f6f6;
+  padding: 0px 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #e9e9e9; }
+
+pre code {
+  background: #1b2032;
+  padding: 0px;
+  border: 0; }
 
 .doc-wrapper {
   background: white;
