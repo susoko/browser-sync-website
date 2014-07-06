@@ -1,12 +1,12 @@
-var fs      = require("fs");
-var cp      = require("child_process");
-var lib     = "/Users/shakyshane/Sites/os-browser-sync";
-var doc     = "/doc/yuidoc.json";
-var docGen  = require("./docgen");
-var opts    = require("/Users/shakyshane/Sites/os-browser-sync/lib/cli/opts.json");
+var fs           = require("fs");
+var cp           = require("child_process");
+var lib          = "/Users/shakyshane/Sites/os-browser-sync";
+var doc          = "/doc/yuidoc.json";
+var docGen       = require("./_docgen");
+var opts         = require("/Users/shakyshane/Sites/os-browser-sync/lib/cli/opts.json");
 var pretemplater = require("pretemplater");
-var marked = require('marked');
-var _       = require("lodash");
+var marked       = require('marked');
+var _            = require("lodash");
 _.templateSettings.interpolate = /{:([\s\S]+?):}/g;
 
 var mdTemp          = _.template(fs.readFileSync("./_docs/api.md", "utf-8"));

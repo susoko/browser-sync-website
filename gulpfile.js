@@ -30,7 +30,7 @@ function getjekyllArgs(cb, env) {
  * Build documentation
  */
 gulp.task("docs-build", function (cb) {
-    return cp.spawn("node", ["makeDocs"], {stdio: "inherit"}).on("close", cb);
+    return cp.spawn("node", ["_makeDocs"], {stdio: "inherit"}).on("close", cb);
 });
 
 /**
