@@ -35,9 +35,13 @@ all browsers will be informed of the changes. Because BrowserSync only cares abo
 
 {% include headerlink.html title="SASS & Source Maps" slug="gulp-sass-maps" %}
 
-If you use [gulp-ruby-sass](https://www.npmjs.org/package/gulp-ruby-sass) with `sourcemap: true` option `*.css.map` file/files will be 
-generated and after css injection browser will be reloaded. To prevent the page from refreshing after 
-css injection use [gulp-filter](https://www.npmjs.org/package/gulp-filter) package.
+If you use [gulp-ruby-sass](https://www.npmjs.org/package/gulp-ruby-sass) with the `sourcemap: true` option, additional `.map` 
+files will be generated. These files end up being sent down stream and when `browserSync.reload()` receives them, it will attempt
+a full page reload (as it will not find any `.map` files in the DOM).
+
+To fix this problem, you can use the [gulp-filter](https://www.npmjs.org/package/gulp-filter) package to ensure that only `*.css`
+ files ever reach `.reload` - this way you'll still get CSS injecting.
+
 
 {% highlight javascript %}
 {% include snippets/gulp/sass.maps.js %}

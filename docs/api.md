@@ -15,7 +15,6 @@ you access to the public methods detailed below.
 
 
 <h3 id="api-browserSync">browserSync( config, cb ) <a href="#api-browserSync" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<p>Handle External API usage.</p>
 
 
 

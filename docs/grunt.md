@@ -25,7 +25,7 @@ grunt.loadNpmTasks('grunt-browser-sync');
 
 {% include headerlink.html title="Static File Server" slug="grunt-server" %}
 
-The simplest example would be watching CSS files, & using the built-in server for static
+The simplest example would be watching CSS files and using the built-in server for static
 HTML/CSS/JS files. This config alone will launch a mini-server (using your current working directory
 as the base), watch your CSS files for changes & auto-inject those changes into all connected browsers. 
 
@@ -45,7 +45,7 @@ If you already have a local server setup (with your vhosts etc), just tell Brows
 {% include headerlink.html title="+ other watch tasks" slug="grunt-watch" %}
 
 Browser Sync is not a replacement for regular `watch` tasks (such as compiling SASS, LESS etc), 
-they are designed to be used together. If you intend to do this, set this option to true and be sure to call 
+they are designed to be used together. If you intend to do this, you'll need to set `watchTask: true` and be sure to call 
 the watch task AFTER browserSync. For example, to compile SASS and then inject the CSS into all open browsers 
 (without a page refresh), your config for all three tasks might look something like this:
 
