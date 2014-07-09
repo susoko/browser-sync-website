@@ -20,9 +20,12 @@ server: {
     index: "index.htm"
 }
 
-// Serve files from the root directory
+// Since version 1.2.1
 server: {
-    baseDir: "./"
+    baseDir: "app",
+    routes: {
+        "/bower_components": "../bower_components"
+    }
 }
 
 // Custom Middleware
