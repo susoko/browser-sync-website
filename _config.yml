@@ -22,7 +22,7 @@ env: "production"
 navigation:
  - page-label: home
    label: "Get Started"
-   url: /docs.html#install
+   url: \#install
  - page-label: docs
    label: "Documentation"
    url: /docs
@@ -58,3 +58,4 @@ links:
   grunt:        "/docs/grunt"
   options:      "/docs/options"
   command-line: "/docs/command-line"
+  api:          "/docs/api"

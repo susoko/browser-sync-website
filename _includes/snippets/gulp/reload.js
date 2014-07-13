@@ -9,7 +9,7 @@ gulp.task('browser-sync', function() {
 
 // process JS files and reload all browsers when complete.
 gulp.task('js', function () {
-    gulp.src('js/*js')
+    return gulp.src('js/*js')
         .pipe(browserify())
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'))
