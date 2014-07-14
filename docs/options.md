@@ -144,6 +144,22 @@ proxy: "localhost/site1"
 // Use a specific port (instead of the one auto-detected by BrowserSync)
 port: 8080
 {% endhighlight %}
+<h3 id="option-https">https <a href="#option-https" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">Boolean</span>
+    
+    </li>
+    <li class="default">Default: <span class="color-teal">undefined</span></li>
+    
+</ul>
+
+<p>For use with the server ONLY, enable https</p>
+
+
+{% highlight javascript %}
+// Enable HTTPS for static file server
+https: true
+{% endhighlight %}
 <h3 id="option-ghostMode">ghostMode <a href="#option-ghostMode" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Object</span>
@@ -240,18 +256,31 @@ online: false
 {% endhighlight %}
 <h3 id="option-open">open <a href="#option-open" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span>
+    <li class="type">Type: <span class="color-teal">Boolean | String</span>
     
     </li>
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
 
+<p>Decide which URL to open automatically when BrowserSycn starts, or choose none.
+Can be true, &quot;local&quot;, &quot;external&quot; or &quot;tunnel&quot;</p>
 
 
 {% highlight javascript %}
 // Stop the browser from automatically opening
 open: false
+
+// Open the localhost URL
+open: true
+
+// The following availble since v1.3.0
+
+// Open the external URL - must be online.
+open: "external"
+
+// Open the tunnel URL - must also set the `tunnel` option
+open: "tunnel"
 {% endhighlight %}
 <h3 id="option-browser">browser <a href="#option-browser" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">

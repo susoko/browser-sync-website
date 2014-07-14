@@ -64,8 +64,7 @@ gulp.task("browser-sync", ["sass", "jekyll-build-dev"], function() {
         server: {
             baseDir: "_site"
         },
-        online: false,
-        open: false
+        open: "local"
     });
 });
 
