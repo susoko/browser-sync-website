@@ -370,22 +370,6 @@ xip: true
 // Don't show any notifications in the browser.
 notify: false
 {% endhighlight %}
-<h3 id="option-debounce">debounce <a href="#option-debounce" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Number</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">0</span></li>
-    
-</ul>
-
-<p>Number in milliseconds to wait before emitting file changed event</p>
-
-
-{% highlight javascript %}
-
-{% endhighlight %}
 <h3 id="option-scrollProportionally">scrollProportionally <a href="#option-scrollProportionally" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
