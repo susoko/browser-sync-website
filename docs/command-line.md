@@ -34,6 +34,11 @@ $ browser-sync start <options>
         </tr>
     
         <tr>
+            <td>--https</td>
+            <td>Enable SSL for local development</td>
+        </tr>
+    
+        <tr>
             <td>--directory</td>
             <td>Show a directory listing for the server</td>
         </tr>
@@ -51,6 +56,11 @@ $ browser-sync start <options>
         <tr>
             <td>--tunnel</td>
             <td>Use a public URL</td>
+        </tr>
+    
+        <tr>
+            <td>--open</td>
+            <td>Choose which URL is auto-opened (local, external or tunnel)</td>
         </tr>
     
         <tr>

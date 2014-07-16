@@ -225,6 +225,9 @@ $spacing: $base-spacing+$half-spacing;
         &.type {
             border-bottom: 1px solid #ebebeb;
         }
+        &.since {
+            border-bottom: 1px solid #ebebeb;
+        }
 
         &.desc {
             padding-top: $half-spacing;

@@ -18,6 +18,7 @@ still use all of these options, but you need to provide them as detailed in the 
     <li class="type">Type: <span class="color-teal">Array | String</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">false</span></li>
     
 </ul>
@@ -40,11 +41,35 @@ files: "app/css/*.css"
 // multiple globs
 files: ["app/css/*.css", "app/**.*.html", "app/js/**/*.js"]
 {% endhighlight %}
+<h3 id="option-watchOptions">watchOptions <a href="#option-watchOptions" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">Object</span>
+    
+    </li>
+    
+    <li class="since">Since: <span class="color-teal">1.3.0</span></li>
+    
+    <li class="default">Default: <span class="color-teal">undefined</span></li>
+    
+</ul>
+
+<p>File watching options that get passed along to <a href="https://github.com/shama/gaze">Gaze</a>. Check out the <a href="https://github.com/shama/gaze#properties">properties</a>
+section of their docs to see which options they support.
+for availbable options</p>
+
+
+{% highlight javascript %}
+// Options passed to Gaze
+watchOptions: {
+    debounceDelay: 1000
+}
+{% endhighlight %}
 <h3 id="option-server">server <a href="#option-server" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Object | Boolean</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">false</span></li>
     
 </ul>
@@ -112,6 +137,7 @@ server: {
     <li class="type">Type: <span class="color-teal">String | Boolean</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">false</span></li>
     
 </ul>
@@ -134,6 +160,7 @@ proxy: "localhost/site1"
     <li class="type">Type: <span class="color-teal">Number</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">3000</span></li>
     
 </ul>
@@ -149,11 +176,14 @@ port: 8080
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
     </li>
+    
+    <li class="since">Since: <span class="color-teal">1.3.0</span></li>
+    
     <li class="default">Default: <span class="color-teal">undefined</span></li>
     
 </ul>
 
-<p>For use with the server ONLY, enable https</p>
+<p>Enable https for localhost development. <strong>Note:</strong> Proxy and Tunnel not currently supported.</p>
 
 
 {% highlight javascript %}
@@ -198,6 +228,7 @@ ghostMode: false
     <li class="type">Type: <span class="color-teal">String</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">info</span></li>
     
 </ul>
@@ -220,6 +251,7 @@ logLevel: "silent"
     <li class="type">Type: <span class="color-teal">String | Boolean</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">null</span></li>
     
 </ul>
@@ -239,6 +271,7 @@ tunnel: "my-private-site"
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">undefined</span></li>
     
 </ul>
@@ -259,11 +292,12 @@ online: false
     <li class="type">Type: <span class="color-teal">Boolean | String</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
 
-<p>Decide which URL to open automatically when BrowserSycn starts, or choose none.
+<p>Decide which URL to open automatically when BrowserSync starts. Defaults to &quot;local&quot; if none set.
 Can be true, &quot;local&quot;, &quot;external&quot; or &quot;tunnel&quot;</p>
 
 
@@ -287,6 +321,7 @@ open: "tunnel"
     <li class="type">Type: <span class="color-teal">String | Array</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">default</span></li>
     
 </ul>
@@ -305,11 +340,12 @@ browser: ["google chrome", "firefox"]
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">false</span></li>
     
 </ul>
 
-<p>Requires an internet connection - usefull for services such as <a href="https://typekit.com/">Typekit</a>
+<p>Requires an internet connection - useful for services such as <a href="https://typekit.com/">Typekit</a>
 as it allows you to configure domains such as <code>*.xip.io</code> in your kit settings</p>
 
 
@@ -322,6 +358,7 @@ xip: true
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
@@ -338,6 +375,7 @@ notify: false
     <li class="type">Type: <span class="color-teal">Number</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">0</span></li>
     
 </ul>
@@ -346,14 +384,14 @@ notify: false
 
 
 {% highlight javascript %}
-// Wait for 0.2 seconds since the last file changed to actually reload the browser
-debounce: 200
+
 {% endhighlight %}
 <h3 id="option-scrollProportionally">scrollProportionally <a href="#option-scrollProportionally" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
@@ -368,6 +406,7 @@ scrollProportionally: false // Sync viewports to TOP position
     <li class="type">Type: <span class="color-teal">Number</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">0</span></li>
     
 </ul>
@@ -382,6 +421,7 @@ scrollThrottle: 100 // only send scroll events every 100 milliseconds
     <li class="type">Type: <span class="color-teal">Number</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">0</span></li>
     
 </ul>
@@ -397,6 +437,7 @@ reloadDelay: 2000
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
@@ -415,6 +456,7 @@ injectChanges: false,
     <li class="type">Type: <span class="color-teal">String | Null</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">null</span></li>
     
 </ul>
@@ -430,6 +472,7 @@ startPath: "/info.php"
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
@@ -446,6 +489,7 @@ minify: false
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">false</span></li>
     
 </ul>
@@ -459,11 +503,27 @@ logConnections: true
 // Don't log connections
 logConnections: false
 {% endhighlight %}
+<h3 id="option-logFileChanges">logFileChanges <a href="#option-logFileChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">Boolean</span>
+    
+    </li>
+    
+    <li class="default">Default: <span class="color-teal">true</span></li>
+    
+</ul>
+
+
+
+{% highlight javascript %}
+
+{% endhighlight %}
 <h3 id="option-host">host <a href="#option-host" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">null</span></li>
     
 </ul>
@@ -479,6 +539,7 @@ host: "192.168.1.1"
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>
@@ -494,6 +555,7 @@ codeSync: true,
     <li class="type">Type: <span class="color-teal">Boolean</span>
     
     </li>
+    
     <li class="default">Default: <span class="color-teal">true</span></li>
     
 </ul>

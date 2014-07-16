@@ -1940,6 +1940,8 @@ pre code {
       font-weight: 700; }
     .param-list li.type {
       border-bottom: 1px solid #ebebeb; }
+    .param-list li.since {
+      border-bottom: 1px solid #ebebeb; }
     .param-list li.desc {
       padding-top: 12px; }
     .param-list li .recede {

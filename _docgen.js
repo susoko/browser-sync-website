@@ -89,8 +89,6 @@ function fixParams(item) {
         return string.replace(/\|/g, " | ");
     }
 
-
-
     return item;
 }
 
@@ -172,6 +170,12 @@ function prepareOptions(items) {
             .map(fixGhostMode)
             .map(addSubprops)
             .map(fixParams)
+            .map(function (item) {
+                if (!item.since) {
+                    item.since = false;
+                }
+                return item;
+            })
             .map(fixDefaults);
     }
     return items;

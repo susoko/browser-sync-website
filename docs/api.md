@@ -93,7 +93,7 @@ browserSync.reload( { stream: true } );
 {% endhighlight %}
 
 
-<h3 id="api-notify">.notify( msg ) <a href="#api-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<h3 id="api-notify">.notify( msg, timeout ) <a href="#api-notify" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <p>Helper method for browser notifications</p>
 
 
@@ -107,6 +107,15 @@ browserSync.reload( { stream: true } );
 </li>
 </ul>
 
+<ul class="param-list" id="api-notify-timeout">
+    <li class="name">timeout <a href="#api-notify-timeout" class="page-anchor"><i class="icon icon-external-link"></i></a></li>
+    <li class="type">Type: <span class="color-teal">Number</span>
+        <span class="recede">[optional]</span>
+    </li>
+    <li class="desc"><p>How long the message will remain in the browser. @since 1.3.0</p>
+</li>
+</ul>
+
 
 
 
@@ -114,6 +123,9 @@ browserSync.reload( { stream: true } );
 browserSync.notify("Compiling, please wait!");
 
 browserSync.notify("HTML <span color='green'>is supported</span> too!");
+
+// Since 1.3.0, specify a timeout
+browserSync.notify("This message will only last a second", 1000);
 {% endhighlight %}
 
 
