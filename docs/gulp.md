@@ -49,8 +49,9 @@ To fix this problem, you can use the [gulp-filter](https://www.npmjs.org/package
 
 {% include headerlink.html title="Browser Reloading" slug="gulp-reload" %}
 
-Sometimes you might just want to reload the page completely (for example, after processing a bunch of JS files) - 
-you can do that by passing once as an option. This will stop `.reload()` being call multiple times.
+Sometimes you might just want to reload the page completely (for example, after processing a bunch of JS files), you 
+can do that easily by adding `.reload` to the array of tasks that will be run when files change. (make sure you `return`
+ the stream from your tasks to ensure the browser is reloaded at the correct time)
 
 {% highlight javascript %}
 {% include snippets/gulp/reload.js %}
