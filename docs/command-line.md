@@ -34,6 +34,16 @@ $ browser-sync start <options>
         </tr>
     
         <tr>
+            <td>--index</td>
+            <td>Specify which file should be used as the index page</td>
+        </tr>
+    
+        <tr>
+            <td>--startPath</td>
+            <td>Specify the start path for the opened browser</td>
+        </tr>
+    
+        <tr>
             <td>--https</td>
             <td>Enable SSL for local development</td>
         </tr>

@@ -233,7 +233,7 @@ ghostMode: false
     
 </ul>
 
-<p>Can be either &quot;info&quot;, &quot;debug&quot; or &quot;silent&quot;</p>
+<p>Can be either &quot;info&quot;, &quot;debug&quot;, &quot;warn&quot;, or &quot;silent&quot;</p>
 
 
 {% highlight javascript %}
@@ -245,6 +245,67 @@ logLevel: "info"
 
 // output NOTHING to the commandline
 logLevel: "silent"
+{% endhighlight %}
+<h3 id="option-logPrefix">logPrefix <a href="#option-logPrefix" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">String</span>
+    
+    </li>
+    
+    <li class="since">Since: <span class="color-teal">1.5.1</span></li>
+    
+    <li class="default">Default: <span class="color-teal">BS</span></li>
+    
+</ul>
+
+<p>Change the console logging prefix. Useful if you&#39;re creating your
+own project based on BrowserSync</p>
+
+
+{% highlight javascript %}
+logPrefix: "My Awesome Project"
+
+// [My Awesome Project] Local URL: http://localhost:3000
+// [My Awesome Project] Watching files....
+// [My Awesome Project] File changed: "index.html"
+{% endhighlight %}
+<h3 id="option-logConnections">logConnections <a href="#option-logConnections" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">Boolean</span>
+    
+    </li>
+    
+    <li class="default">Default: <span class="color-teal">false</span></li>
+    
+</ul>
+
+
+
+{% highlight javascript %}
+// Log connections
+logConnections: true
+
+// Don't log connections
+logConnections: false
+{% endhighlight %}
+<h3 id="option-logFileChanges">logFileChanges <a href="#option-logFileChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">Boolean</span>
+    
+    </li>
+    
+    <li class="default">Default: <span class="color-teal">true</span></li>
+    
+</ul>
+
+
+
+{% highlight javascript %}
+// Log information about changed files
+logFileChanges: true
+
+// Don't log file changes
+logFileChanges: false
 {% endhighlight %}
 <h3 id="option-tunnel">tunnel <a href="#option-tunnel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
@@ -468,40 +529,6 @@ startPath: "/info.php"
 // Don't minify the client-side JS
 minify: false
 {% endhighlight %}
-<h3 id="option-logConnections">logConnections <a href="#option-logConnections" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">false</span></li>
-    
-</ul>
-
-
-
-{% highlight javascript %}
-// Log connections
-logConnections: true
-
-// Don't log connections
-logConnections: false
-{% endhighlight %}
-<h3 id="option-logFileChanges">logFileChanges <a href="#option-logFileChanges" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<ul class="param-list">
-    <li class="type">Type: <span class="color-teal">Boolean</span>
-    
-    </li>
-    
-    <li class="default">Default: <span class="color-teal">true</span></li>
-    
-</ul>
-
-
-
-{% highlight javascript %}
-
-{% endhighlight %}
 <h3 id="option-host">host <a href="#option-host" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String</span>
@@ -549,4 +576,27 @@ codeSync: true,
 {% highlight javascript %}
 // Don't append timestamps to injected files
 timestamps: false
+{% endhighlight %}
+<h3 id="option-socket">socket <a href="#option-socket" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">Object</span>
+    
+        <ul class="nav nav--stacked subprops">
+            
+                <li><b>path</b> - Default: <span class="color-teal">"/browser-sync/socket.io"</span></li>
+            
+                <li><b>clientPath</b> - Default: <span class="color-teal">"/browser-sync"</span></li>
+            
+                <li><b>namespace</b> - Default: <span class="color-teal">"/browser-sync"</span></li>
+            
+        </ul>
+    </li>
+    
+</ul>
+
+<p>Configure the Socket.IO path and namespace to avoid collisions.</p>
+
+
+{% highlight javascript %}
+
 {% endhighlight %}

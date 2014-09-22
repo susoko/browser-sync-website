@@ -141,6 +141,20 @@ browserSync(config, function (err, bs) {
 {% endhighlight %}
 
 
+<h3 id="api-active">.active <a href="#api-active" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<p>A simple true/false flag that you can use to determine if there&#39;s a currently-running BrowserSync instance.</p>
+
+
+
+{% highlight javascript %}
+console.log(browserSync.active); // false
+
+browserSync(config, function (err, bs) {
+    console.log(browserSync.active); // true
+});
+{% endhighlight %}
+
+
 <h3 id="api-emitter">.emitter <a href="#api-emitter" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <p>The internal Event Emitter used by the running BrowserSync instance (if there is one).
 You can use this to emit your own events, such as changed files, logging etc.</p>
@@ -155,19 +169,5 @@ evt.on("init", function () {
 });
 
 browserSync(config);
-{% endhighlight %}
-
-
-<h3 id="api-active">.active <a href="#api-active" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
-<p>A simple true/false flag that you can use to determine if there&#39;s a currently-running BrowserSync instance.</p>
-
-
-
-{% highlight javascript %}
-console.log(browserSync.active); // false
-
-browserSync(config, function (err, bs) {
-    console.log(browserSync.active); // true
-});
 {% endhighlight %}
 

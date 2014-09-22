@@ -3,7 +3,7 @@ var cp           = require("child_process");
 var lib          = "/Users/shakyshane/Sites/os-browser-sync";
 var doc          = "/doc/yuidoc.json";
 var docGen       = require("./_docgen");
-var opts         = require("/Users/shakyshane/Sites/os-browser-sync/lib/cli/opts.json");
+var opts         = require("browser-sync/lib/cli/opts.json");
 var pretemplater = require("pretemplater");
 var marked       = require('marked');
 var _            = require("lodash");
@@ -158,7 +158,11 @@ function optionsMarkup (combined, item) {
         item.description = marked(item.description);
     }
 
-    return combined + getTemplate("option")(item);
+    if (item.type) {
+        return combined + getTemplate("option")(item);
+    }
+
+    return combined;
 }
 
 /**
