@@ -307,6 +307,24 @@ logFileChanges: true
 // Don't log file changes
 logFileChanges: false
 {% endhighlight %}
+<h3 id="option-logSnippet">logSnippet <a href="#option-logSnippet" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">: Boolean</span>
+    
+    </li>
+    
+    <li class="since">Since: <span class="color-teal">1.5.2</span></li>
+    
+    <li class="default">Default: <span class="color-teal">true</span></li>
+    
+</ul>
+
+<p>Log the snippet to the console when you&#39;re in snippet mode (no proxy/server)</p>
+
+
+{% highlight javascript %}
+
+{% endhighlight %}
 <h3 id="option-tunnel">tunnel <a href="#option-tunnel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">String | Boolean</span>
