@@ -94,6 +94,11 @@ $ browser-sync start <options>
         </tr>
     
         <tr>
+            <td>--no-notify</td>
+            <td>Disable the notify element in browsers</td>
+        </tr>
+    
+        <tr>
             <td>--no-open</td>
             <td>Don't open a new browser window</td>
         </tr>

@@ -37,5 +37,8 @@
     "pretemplater": "^1.1.2",
     "gulp-plumber": "^0.6.3",
     "marked": "^0.3.2"
+  },
+  "dependencies": {
+    "browser-sync": "^1.5.3"
   }
 }
