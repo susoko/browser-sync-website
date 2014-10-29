@@ -595,6 +595,30 @@ codeSync: true,
 // Don't append timestamps to injected files
 timestamps: false
 {% endhighlight %}
+<h3 id="option-scriptPath">scriptPath <a href="#option-scriptPath" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">Function</span>
+    
+    </li>
+    
+    <li class="since">Since: <span class="color-teal">1.5.0</span></li>
+    
+    <li class="default">Default: <span class="color-teal">undefined</span></li>
+    
+</ul>
+
+<p>Alter the script path for complete control over where the BrowserSync
+Javascript is served from. Whatever you return from this function
+will be used as the script path.</p>
+
+
+{% highlight javascript %}
+// This will result in something like
+// <script src="localhost:3002/browser-sync/browser-sync-client.1.6.0.js" />
+scriptPath: function (path) {
+    return "localhost:3002" + path;
+}
+{% endhighlight %}
 <h3 id="option-socket">socket <a href="#option-socket" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
     <li class="type">Type: <span class="color-teal">Object</span>
@@ -612,9 +636,16 @@ timestamps: false
     
 </ul>
 
-<p>Configure the Socket.IO path and namespace to avoid collisions.</p>
+<p>Configure the Socket.IO path and namespace to avoid collisions. Note: <code>namespace</code> can also be a function</p>
 
 
 {% highlight javascript %}
-
+// This will result in something like this in
+// the socket connector code
+// browserSync.io('localhost:3003/browser-sync')
+socket: {
+    namespace: function (namespace) {
+        return "localhost:3003" + namespace;
+    }
+}
 {% endhighlight %}
