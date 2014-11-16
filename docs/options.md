@@ -323,7 +323,48 @@ logFileChanges: false
 
 
 {% highlight javascript %}
+// Don't ever log the snippet
+logSnippet: false
+{% endhighlight %}
+<h3 id="option-snippetOptions">snippetOptions <a href="#option-snippetOptions" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
+<ul class="param-list">
+    <li class="type">Type: <span class="color-teal">Object</span>
+    
+        <ul class="nav nav--stacked subprops">
+            
+                <li><b>ignorePaths</b> - Default: <span class="color-teal">undefined</span></li>
+            
+                <li><b>rule.match</b> - Default: <span class="color-teal">/&lt;body&#91;^&gt;&#93;*&gt;/i</span></li>
+            
+                <li><b>rule.fn</b> - Default: <span class="color-teal">Function</span></li>
+            
+        </ul>
+    </li>
+    
+</ul>
 
+<p>SINCE 1.7.0! You can control how the snippet is injected
+onto each page via a custom regex + function.
+You can also provide patterns for certain urls
+that should be ignored from the snippet injection.</p>
+
+
+{% highlight javascript %}
+// Customise the placement of the snippet
+// and ignore certain paths
+snippetOptions: {
+
+    // Ignore all HTML files within the templates folder
+    ignorePaths: "templates/*.html",
+
+    // Provide a custom Regex for inserting the snippet.
+    rule: {
+        match: /<\/body>/i,
+        fn: function (snippet, match) {
+            return snippet + match;
+        }
+    }
+}
 {% endhighlight %}
 <h3 id="option-tunnel">tunnel <a href="#option-tunnel" class="page-anchor"><i class="icon icon-external-link"></i></a></h3>
 <ul class="param-list">
