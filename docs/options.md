@@ -200,8 +200,6 @@ https: true
             
                 <li><b>scroll</b> - Default: <span class="color-teal">true</span></li>
             
-                <li><b>location</b> - Default: <span class="color-teal">false</span></li>
-            
                 <li><b>forms</b> - Default: <span class="color-teal">true</span></li>
             
         </ul>
@@ -209,13 +207,13 @@ https: true
     
 </ul>
 
+<p>Clicks, scrolls &amp; Form inputs on any device will be mirrored to all others.</p>
 
 
 {% highlight javascript %}
 // Here you can disable/enable each feature individually
 ghostMode: {
     clicks: true,
-    location: true,
     forms: true,
     scroll: false
 }

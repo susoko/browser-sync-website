@@ -23,7 +23,9 @@ function getjekyllArgs(cb, env) {
         args.push(newconfig);
     }
 
-    return cp.spawn("jekyll", args, {stdio: "inherit"}).on("close", cb);
+    return cp.spawn("jekyll", args, {stdio: "inherit"}).on("close", cb).on("error", function (err) {
+        console.log(err);
+    });
 }
 
 /**

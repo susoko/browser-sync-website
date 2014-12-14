@@ -1,7 +1,6 @@
 // Here you can disable/enable each feature individually
 ghostMode: {
     clicks: true,
-    location: true,
     forms: true,
     scroll: false
 }
